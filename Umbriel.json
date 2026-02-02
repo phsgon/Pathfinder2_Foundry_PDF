@@ -1,0 +1,5921 @@
+{
+  "name": "Umbriel",
+  "type": "character",
+  "prototypeToken": {
+    "flags": {
+      "pf2e": {
+        "linkToActorSize": true,
+        "autoscale": true
+      }
+    },
+    "height": 1,
+    "width": 1,
+    "actorLink": true,
+    "sight": {
+      "enabled": true,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "name": "Umbriel",
+    "displayName": 20,
+    "texture": {
+      "src": "systems/pf2e/icons/default-icons/character.svg",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "lockRotation": true,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": -1,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "attributes.hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "detectionModes": [],
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "turnMarker": {
+      "mode": 1,
+      "animation": null,
+      "src": null,
+      "disposition": false
+    },
+    "movementAction": null,
+    "randomImg": false,
+    "appendNumber": false,
+    "prependAdjective": false
+  },
+  "effects": [],
+  "system": {
+    "attributes": {
+      "hp": {
+        "value": 14,
+        "temp": 0
+      }
+    },
+    "initiative": {
+      "statistic": "perception"
+    },
+    "details": {
+      "languages": {
+        "value": [],
+        "details": ""
+      },
+      "level": {
+        "value": 1
+      },
+      "biography": {
+        "appearance": "",
+        "backstory": "",
+        "birthPlace": "",
+        "attitude": "",
+        "beliefs": "",
+        "anathema": [],
+        "edicts": [],
+        "likes": "",
+        "dislikes": "",
+        "catchphrases": "",
+        "campaignNotes": "",
+        "allies": "",
+        "enemies": "",
+        "organizations": "",
+        "visibility": {
+          "appearance": true,
+          "backstory": false,
+          "personality": false,
+          "campaign": false
+        }
+      },
+      "keyability": {
+        "value": "str"
+      },
+      "xp": {
+        "value": 0,
+        "min": 0,
+        "max": 1000
+      },
+      "age": {
+        "value": ""
+      },
+      "height": {
+        "value": ""
+      },
+      "weight": {
+        "value": ""
+      },
+      "gender": {
+        "value": ""
+      },
+      "ethnicity": {
+        "value": ""
+      },
+      "nationality": {
+        "value": ""
+      }
+    },
+    "resources": {
+      "heroPoints": {
+        "value": 1,
+        "max": 3
+      }
+    },
+    "_migration": {
+      "version": 0.953,
+      "previous": null
+    },
+    "abilities": null,
+    "skills": {
+      "arcana": {
+        "rank": 1
+      },
+      "society": {
+        "rank": 1
+      },
+      "crafting": {
+        "rank": 1
+      },
+      "thievery": {
+        "rank": 1
+      },
+      "stealth": {
+        "rank": 1
+      },
+      "acrobatics": {
+        "rank": 1
+      },
+      "nature": {
+        "rank": 1
+      }
+    },
+    "pfs": {
+      "playerNumber": null,
+      "characterNumber": null,
+      "levelBump": false,
+      "currentFaction": "EA",
+      "school": null,
+      "reputation": {
+        "EA": null,
+        "GA": null,
+        "HH": null,
+        "VS": null,
+        "RO": null,
+        "VW": null
+      }
+    },
+    "exploration": [],
+    "build": {
+      "attributes": {
+        "boosts": {
+          "1": [
+            "int",
+            "dex",
+            "con",
+            "wis"
+          ]
+        }
+      }
+    }
+  },
+  "img": "systems/pf2e/icons/default-icons/character.svg",
+  "items": [
+    {
+      "_id": "MRxswcxp4KL85G9R",
+      "img": "systems/pf2e/icons/ancestries/elf.webp",
+      "name": "Elfo",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p><em>Como um povo antigo, elfos presenciaram enormes mudanças e possuem uma perspectiva única, que só é possível ao testemunhar o arco da história. Após deixarem o mundo em tempos antigos, eles retornaram a uma terra quase irreconhecível e ainda lutam para reivindicar seus lares ancestrais — especialmente aquelas invadidas por demônios terríveis. Para alguns, os elfos são alvo de admiração — graciosos e belos, com imenso talento e conhecimento. Contudo, os próprios elfos dão muito mais importância à sua liberdade pessoal do que a viver segundo estes ideais.</em></p>\n<hr />\n<p>Elfos combinam uma graça extraterrena, intelecto apurado e um charme misterioso de uma forma intensamente atraente para membros de outras ancestralidades. Eles frequentemente são vorazes intelectualmente, embora seus estudos cheguem a níveis de detalhamento que a maioria dos povos de vida curta considera excessivo ou ineficiente. Valorizando gentileza e beleza, elfos sempre se esforçam para melhorar suas maneiras, aparência e cultura.</p>\n<p> Os elfos geralmente são pessoas reservadas, imersos nos segredos de seus bosques e entre seus grupos familiares. Eles são lentos para formar amizades fora de seu povo, mas por uma razão específica: os elfos se sintonizam de forma sutil e profunda ao ambiente e a seus companheiros. Essa sintonia tem um certo componente físico, mas não se restringe apenas a isso. Elfos que vivem entre povos de vida curta costumam desenvolver uma percepção enviesada de sua própria mortalidade, e frequentemente se tornam morosos após observarem o envelhecimento e morte de geração após geração de companheiros. Estes elfos são chamados de Abandonados.</p>\n<p>Se quiser um personagem que seja mágico, místico e misterioso, você deve jogar com um elfo.</p>\n<h2>Você Pode...</h2>\n<ul>\n<li>Cuidadosamente selecionar suas relações com pessoas de vidas mais curtas, seja mantendo uma distância emocional cuidadosa ou resignando-se a viver mais que eles.</li>\n<li>Adotar interesses especializados ou obscuros com o único propósito de dominá-los.</li>\n<li>Ter características como cor dos olhos, tom de pele, cabelo ou maneirismos que refletem o ambiente onde você vive.</li>\n</ul>\n<h2> Outros Provavelmente...</h2>\n<ul>\n<li>Focam em sua aparência, seja admirando sua graça ou tratando-o como se fosse fisicamente frágil.</li>\n<li>Pressupõem que você pratica arquearia, conjura magias, combate demônios e é mestre em uma ou mais artes.</li>\n<li>Preocupam-se que você os despreze em segredo, ou sentem que você é condescendente e indiferente.</li>\n</ul>\n<h2>Descrição Física</h2>\n<p>Embora geralmente sejam mais altos que humanos, elfos possuem uma graça frágil, acentuada por traços alongados e orelhas pontudas. Seus olhos são largos e amendoados, com pupilas grandes de cores vibrantes que ocupam toda a área visível de seu olho. Estas pupilas os conferem uma aparência alienígena e uma visão bastante aguçada mesmo em ambientes de pouca luz.</p>\n<p>Elfos gradualmente se adaptam ao ambiente e a seus companheiros, e frequentemente assumem características físicas que reflitam seus arredores. Um elfo que viveu séculos em florestas primitivas, por exemplo, pode exibir cabelos verdejantes e dedos rugosos enquanto um que tenha vivido em um deserto pode ter pele e pupilas douradas. A moda élfica, como os próprios elfos, tende a refletir seus arredores. Elfos vivendo em florestas e outros locais ermos vestem roupas que combinam com o terreno e a flora de seus lares, enquanto aqueles que vivem em cidades tendem a vestir a última moda.</p>\n<p>Elfos alcançam a maturidade física em torno dos 20 anos de idade, embora não sejam considerados completamente maduros emocionalmente por outros elfos até completarem seu primeiro século de vida. Nesse ponto o elfo já terá vivenciado mais experiências, exercido algumas ocupações e vivido mais do que uma geração inteira dos povos de vida curta. Tipicamente, um elfo pode viver cerca de 600 anos.</p>\n<h2>Sociedade</h2>\n<p>A cultura élfica é absorta, rica e está em declínio. Sua sociedade atingiu o ápice milênios atrás, muito antes de abandonarem este mundo para escapar de uma grande calamidade. Eles retornaram, mas a reconstrução não é tarefa fácil. Sua paciência e curiosidade intelectual inata faz dos elfos excelentes sábios, filósofos e magos, e suas sociedades são baseadas em seu inerente senso de admiração e vasto conhecimento. A arquitetura élfica exibe uma profunda apreciação da beleza, e as cidades élficas são maravilhosas obras de arte.</p>\n<p>Elfos possuem ideais profundamente arraigados de individualidade, permitindo que cada um deles explore várias ocupações antes de se dedicar à atividade, carreira ou paixão de sua preferência. Elfos nutrem um ressentimento notório contra seus rivais – algo que eles chamam de ilduliel. Às vezes, com o tempo, estas relações antagônicas acabam resultando em amizades.</p>\n<h2>Tendência e Religião</h2>\n<p>Elfos são frequentemente emotivos e caprichosos, embora mantenham altos ideais em seus corações. Por isso, muitos são caóticos e bons. Eles preferem divindades que também apreciem a arte e o misticismo. Desna e Shelyn são suas divindades favoritas — a primeira por seu senso de admiração e a última por sua apreciação das artes. Calístria é a mais notória das divindades élficas, já que representa muitos dos ideais tipicamente élficos levados ao extremo.</p>\n<h2>Elfos Aventureiros</h2>\n<p>Muitos elfos se aventuram para encontrar beleza e descobrir coisas novas. Biografias típicas para um elfo incluem batedor, caçador, emissário, estudioso e nobre. Elfos frequentemente se tornam ladinos ou patrulheiros, aproveitando sua grande destreza, ou então alquimistas ou magos, explorando sua curiosidade intelectual.</p>\n<h2>Nomes</h2>\n<p>Cada elfo mantém seu nome pessoal em segredo, conhecido apenas entre sua família. Eles se apresentam para outras pessoas usando um apelido, que podem mudar por causa de eventos da sua vida ou mesmo por simples capricho. Um único elfo pode ser conhecido por vários nomes, criados em diferentes épocas ou regiões. Nomes élficos são compostos de várias sílabas e são feitos para fluírem liricamente — pelo menos na língua élfica. É tão comum que terminem em “-el” ou “-ara” que outras culturas às vezes evitam nomes com essas terminações, para não soarem “élfico demais”.</p>\n<h3><span style=\"text-decoration:underline\">Exemplos de Nomes</span></h3>\n<p>Aerel, Amrunelara, Caladrel, Dardlara, Faunra, Heldalel, Jathal, Lanliss, Oparal, Seldlon, Soumral, Talathel, Tessara, Variel, Yalandlara, Zordlon</p>\n<h2 style=\"border-bottom:1px solid var(--color-underline-header)\">Mecânicas dos Elfos</h2>\n<p><strong>Pontos de Vida</strong> 6</p>\n<p><strong>Tamanho</strong> Médio</p>\n<p><strong>Velocidade</strong> 9 metros</p>\n<p><strong>Melhoria de Atributos</strong> Destreza, Inteligência, Livre</p>\n<p><strong>Defeito de Atributo</strong> Constituição</p>\n<p><strong>Idiomas</strong> Comum, Élfico</p>\n<p><strong>Idiomas Adicionais</strong> iguais a seu modificador de Inteligência (se positivo). Escolha dentre Celestial, Dracônico, Gnoll, Gnômico, Goblin, Órquico, Silvestre e quaisquer outros idiomas aos quais você tenha acesso (como os idiomas prevalentes em sua região).</p>\n<p><strong>Sentido</strong> Visão na Penumbra</p>"
+        },
+        "rules": [],
+        "slug": "elf",
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "elf",
+            "humanoid"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "hp": 6,
+        "size": "med",
+        "hands": 2,
+        "reach": 5,
+        "speed": 30,
+        "boosts": {
+          "0": {
+            "value": [
+              "dex"
+            ]
+          },
+          "1": {
+            "value": [
+              "int"
+            ]
+          },
+          "2": {
+            "value": [
+              "str",
+              "dex",
+              "con",
+              "int",
+              "wis",
+              "cha"
+            ],
+            "selected": "con"
+          }
+        },
+        "flaws": {
+          "0": {
+            "value": [
+              "con"
+            ]
+          }
+        },
+        "languages": {
+          "value": [
+            "common",
+            "elven"
+          ],
+          "custom": ""
+        },
+        "additionalLanguages": {
+          "count": 0,
+          "value": [
+            "draconic",
+            "empyrean",
+            "fey",
+            "gnomish",
+            "goblin",
+            "kholo",
+            "orcish"
+          ],
+          "custom": ""
+        },
+        "items": {},
+        "vision": "low-light-vision"
+      },
+      "type": "ancestry",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.ancestries.Item.PgKmsA2aKdbLU6O0",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769987272607,
+        "modifiedTime": 1769988344967,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Elf"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "vBSlhtvBLKUUy24Z",
+      "folder": "yI3glLXLna5Uq2GR",
+      "img": "systems/pf2e/icons/features/ancestry/caveren-elf.webp",
+      "name": "Elfo das Cavernas",
+      "system": {
+        "ancestry": {
+          "name": "Elf",
+          "slug": "elf",
+          "uuid": "Compendium.pf2e.ancestries.Item.PgKmsA2aKdbLU6O0"
+        },
+        "description": {
+          "value": "<p>Você nasceu ou passou muitos anos em túneis subterrâneos ou cavernas onde a luz é escassa. Você adquire @Compendium[pf2e.ancestryfeatures.HHVQDp61ehcpdiU8]{Visão no Escuro}.</p>",
+          "gm": ""
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core",
+          "authors": ""
+        },
+        "rules": [
+          {
+            "key": "Sense",
+            "selector": "darkvision"
+          }
+        ],
+        "traits": {
+          "rarity": "common",
+          "value": [],
+          "otherTags": []
+        },
+        "slug": "cavern-elf",
+        "_migration": {
+          "version": 0.953,
+          "previous": null
+        }
+      },
+      "type": "heritage",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.heritages.Item.NfIAGatB1KIzt8G7",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769987372940,
+        "modifiedTime": 1769987372940,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Cavern Elf"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "dkLPJjPE0DbYRZ8k",
+      "img": "systems/pf2e/icons/default-icons/background.svg",
+      "name": "Scholar (Ocultismo)",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>You have a knack for learning, and sequestered yourself from the outside world to learn all you could. You read about so many wondrous places and things in your books, and always dreamed about one day seeing the real things. Eventually, that curiosity led you to leave your studies and become an adventurer.</p>\n<p>Choose two ability boosts. One must be to Intelligence or Wisdom, and one is a free ability boost.</p>\n<p>You're trained in your choice of the Arcana, Nature, Occultism, or Religion skill, and the Academia Lore skill. You gain the @UUID[Compendium.pf2e.feats-srd.W6Gl9ePmItfDHji0] skill feat in your chosen skill.</p>"
+        },
+        "rules": [
+          {
+            "choices": [
+              {
+                "label": "PF2E.Skill.Arcana",
+                "value": "arcana"
+              },
+              {
+                "label": "PF2E.Skill.Nature",
+                "value": "nature"
+              },
+              {
+                "label": "PF2E.Skill.Occultism",
+                "value": "occultism"
+              },
+              {
+                "label": "PF2E.Skill.Religion",
+                "value": "religion"
+              }
+            ],
+            "flag": "skill",
+            "key": "ChoiceSet",
+            "prompt": "PF2E.SpecificRule.Prompt.Skill",
+            "selection": "occultism"
+          },
+          {
+            "key": "ActiveEffectLike",
+            "mode": "upgrade",
+            "path": "system.skills.{item|flags.pf2e.rulesSelections.skill}.rank",
+            "value": 1
+          },
+          {
+            "key": "GrantItem",
+            "preselectChoices": {
+              "assurance": "{item|flags.pf2e.rulesSelections.skill}"
+            },
+            "uuid": "Compendium.pf2e.feats-srd.Item.W6Gl9ePmItfDHji0",
+            "flag": "assurance"
+          }
+        ],
+        "slug": "scholar",
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "boosts": {
+          "0": {
+            "value": [
+              "int",
+              "wis"
+            ],
+            "selected": "int"
+          },
+          "1": {
+            "value": [
+              "cha",
+              "con",
+              "dex",
+              "int",
+              "str",
+              "wis"
+            ],
+            "selected": "con"
+          }
+        },
+        "items": {},
+        "trainedSkills": {
+          "value": [],
+          "lore": [
+            "Academia Lore"
+          ]
+        }
+      },
+      "type": "background",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.backgrounds.Item.v0WPfxN6G8XFfFZT",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769987815865,
+        "modifiedTime": 1769988459468,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Scholar"
+        },
+        "pf2e": {
+          "itemGrants": {
+            "assurance": {
+              "id": "xLEzYoLiQpn8LRtm",
+              "onDelete": "detach"
+            }
+          }
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "folder": "y1yqadf5jPHJk1jW",
+      "img": "icons/sundries/books/book-red-exclamation.webp",
+      "name": "Certeza (Ocultismo)",
+      "system": {
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "skill",
+        "description": {
+          "value": "<p>Mesmo nas piores circunstâncias, você pode performar tarefas básicas. Escolha uma períca na qual você é proficiente. Você pode abrir mão de rolar um teste de perícia para essa perícia e, em vez disso, receber um resultado de 10 + seu bônus de proficiência (não aplique nenhum outro bônus, penalidades ou modificadores).</p>\n<hr />\n<p><strong>Especial</strong> Você pode escolher este talento várias vezes. Cada vez, escolha uma perícia diferente e obtenha os benefícios para essa perícia..</p>",
+          "gm": ""
+        },
+        "level": {
+          "value": 1
+        },
+        "maxTakable": null,
+        "prerequisites": {
+          "value": [
+            {
+              "value": "trained in at least one skill"
+            }
+          ]
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core",
+          "authors": ""
+        },
+        "rules": [
+          {
+            "choices": {
+              "config": "skills",
+              "predicate": [
+                {
+                  "gte": [
+                    "skill:{choice|value}:rank",
+                    1
+                  ]
+                }
+              ]
+            },
+            "flag": "assurance",
+            "key": "ChoiceSet",
+            "prompt": "PF2E.SpecificRule.Prompt.Skill",
+            "selection": "occultism"
+          },
+          {
+            "key": "SubstituteRoll",
+            "label": "PF2E.SpecificRule.SubstituteRoll.Assurance",
+            "selector": "{item|flags.pf2e.rulesSelections.assurance}",
+            "slug": "assurance",
+            "value": 10
+          },
+          {
+            "key": "AdjustModifier",
+            "predicate": [
+              "substitute:assurance",
+              {
+                "not": "bonus:type:proficiency"
+              }
+            ],
+            "selector": "{item|flags.pf2e.rulesSelections.assurance}",
+            "suppress": true
+          }
+        ],
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "fortune",
+            "general",
+            "skill"
+          ],
+          "otherTags": []
+        },
+        "slug": "assurance",
+        "_migration": {
+          "version": 0.953,
+          "previous": null
+        },
+        "onlyLevel1": false,
+        "subfeatures": {
+          "proficiencies": {},
+          "senses": {},
+          "suppressedFeatures": []
+        },
+        "location": null
+      },
+      "type": "feat",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.feats-srd.Item.W6Gl9ePmItfDHji0",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769987815865,
+        "modifiedTime": 1769987815865,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Assurance"
+        },
+        "pf2e": {
+          "grantedBy": {
+            "id": "dkLPJjPE0DbYRZ8k",
+            "onDelete": "cascade"
+          }
+        }
+      },
+      "_id": "xLEzYoLiQpn8LRtm",
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "ybDkbCbTWjX5Ydlj",
+      "img": "systems/pf2e/icons/classes/witch.webp",
+      "name": "Bruxo",
+      "system": {
+        "ancestryFeatLevels": {
+          "value": [
+            1,
+            5,
+            9,
+            13,
+            17
+          ]
+        },
+        "attacks": {
+          "advanced": 0,
+          "martial": 0,
+          "other": {
+            "name": "",
+            "rank": 0
+          },
+          "simple": 1,
+          "unarmed": 1
+        },
+        "classFeatLevels": {
+          "value": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20
+          ]
+        },
+        "defenses": {
+          "heavy": 0,
+          "light": 0,
+          "medium": 0,
+          "unarmored": 1
+        },
+        "description": {
+          "value": "<p><em>Você comanda magia poderosa, não através de estudos ou devoção a algum ideal, mas como um receptáculo ou agente de um patrono transcendental misterioso que nem mesmo você compreende inteiramente. Esta entidade pode ser uma divindade disfarçada, uma fada poderosa, uma manifestação de energias naturais, um espírito antigo ou qualquer outro ser sobrenatural poderoso — mas a natureza dela é um mistério para você tanto quanto é para os outros. Através de um familiar especial, seu patrono lhe concede magias versáteis e sortilégios poderosos para usar como bem entender, embora você nunca tenha certeza se as suas ações estão servindo a um plano maior de seu patrono.</em></p>\n<p><em>@UUID[Compendium.pf2e.journals.JournalEntry.kzxu2dI7tFxv6Ix6.JournalEntryPage.fYJruhQfzs4dj0mp]{Bruxo}</em></p>",
+          "gm": ""
+        },
+        "generalFeatLevels": {
+          "value": [
+            3,
+            7,
+            11,
+            15,
+            19
+          ]
+        },
+        "hp": 6,
+        "items": {
+          "568ec": {
+            "img": "systems/pf2e/icons/features/classes/weapon-expertise.webp",
+            "level": 11,
+            "name": "Weapon Expertise",
+            "uuid": "Compendium.pf2e.classfeatures.Item.9XLUh9iMepZesdmc"
+          },
+          "58uhg": {
+            "img": "icons/skills/trades/academics-book-study-purple.webp",
+            "level": 15,
+            "name": "Master Spellcaster",
+            "uuid": "Compendium.pf2e.classfeatures.Item.l1InYvhnQSz6Ucxc"
+          },
+          "5a5an": {
+            "img": "icons/sundries/books/book-open-purple.webp",
+            "level": 19,
+            "name": "Legendary Spellcaster",
+            "uuid": "Compendium.pf2e.classfeatures.Item.Hfaa7TuLn3nE8lr3"
+          },
+          "5jVMU": {
+            "img": "icons/creatures/eyes/human-single-blue.webp",
+            "level": 11,
+            "name": "Perception Expertise",
+            "uuid": "Compendium.pf2e.classfeatures.Item.JCqACxgrm5ixX0Jy"
+          },
+          "H4nN0": {
+            "img": "icons/creatures/mammals/bull-horns-eyes-glowin-orange.webp",
+            "level": 17,
+            "name": "Will of the Pupil",
+            "uuid": "Compendium.pf2e.classfeatures.Item.FuVO8ksHI1B5ozVI"
+          },
+          "ac5cq": {
+            "img": "icons/equipment/back/cloak-collared-pink-gold.webp",
+            "level": 13,
+            "name": "Defensive Robes",
+            "uuid": "Compendium.pf2e.classfeatures.Item.gU7epgcPSm0TD1UK"
+          },
+          "dmo5u": {
+            "img": "systems/pf2e/icons/features/classes/weapon-specialization.webp",
+            "level": 13,
+            "name": "Weapon Specialization",
+            "uuid": "Compendium.pf2e.classfeatures.Item.9EqIasqfI8YIM3Pt"
+          },
+          "kQI3o": {
+            "img": "icons/magic/symbols/symbol-lightning-bolt.webp",
+            "level": 9,
+            "name": "Reflex Expertise",
+            "uuid": "Compendium.pf2e.classfeatures.Item.TUOeATt52P43r5W0"
+          },
+          "q4i1v": {
+            "img": "systems/pf2e/icons/features/classes/witch-spellcasting.webp",
+            "level": 1,
+            "name": "Witch Spellcasting",
+            "uuid": "Compendium.pf2e.classfeatures.Item.zT6QiTMxxj8JYoN9"
+          },
+          "rmucq": {
+            "img": "systems/pf2e/icons/features/classes/familiar.webp",
+            "level": 1,
+            "name": "Familiar (Witch)",
+            "uuid": "Compendium.pf2e.classfeatures.Item.yksPhweBZYVCsE1A"
+          },
+          "sbys9": {
+            "img": "systems/pf2e/icons/features/classes/hexes.webp",
+            "level": 1,
+            "name": "Hexes",
+            "uuid": "Compendium.pf2e.classfeatures.Item.9uLh5z2uPo6LDFRY"
+          },
+          "tasue": {
+            "img": "icons/magic/symbols/question-stone-yellow.webp",
+            "level": 1,
+            "name": "Patron",
+            "uuid": "Compendium.pf2e.classfeatures.Item.KPtF29AaeX2sJW0K"
+          },
+          "vkt9a": {
+            "img": "systems/pf2e/icons/features/classes/magical-fortitude.webp",
+            "level": 5,
+            "name": "Magical Fortitude",
+            "uuid": "Compendium.pf2e.classfeatures.Item.70jqXP2eS4tRZ0Ok"
+          },
+          "vq6ja": {
+            "img": "icons/sundries/books/book-backed-silver-gold.webp",
+            "level": 7,
+            "name": "Expert Spellcaster",
+            "uuid": "Compendium.pf2e.classfeatures.Item.cD3nSupdCvONuHiE"
+          },
+          "x762n": {
+            "img": "systems/pf2e/icons/features/classes/patrons-gift.webp",
+            "level": 19,
+            "name": "Patron's Gift",
+            "uuid": "Compendium.pf2e.classfeatures.Item.cDnFXfl3i5Z2l7JP"
+          }
+        },
+        "keyAbility": {
+          "value": [
+            "int"
+          ],
+          "selected": null
+        },
+        "perception": 1,
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core",
+          "authors": ""
+        },
+        "rules": [],
+        "savingThrows": {
+          "fortitude": 1,
+          "reflex": 1,
+          "will": 2
+        },
+        "skillFeatLevels": {
+          "value": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20
+          ]
+        },
+        "skillIncreaseLevels": {
+          "value": [
+            3,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            19
+          ]
+        },
+        "spellcasting": 1,
+        "trainedSkills": {
+          "additional": 3,
+          "value": []
+        },
+        "traits": {
+          "rarity": "common",
+          "otherTags": []
+        },
+        "slug": "witch",
+        "_migration": {
+          "version": 0.953,
+          "previous": null
+        }
+      },
+      "type": "class",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.classes.Item.bYDXk9HUMKOuym9h",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769988286252,
+        "modifiedTime": 1769988286252,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Witch"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "img": "systems/pf2e/icons/features/classes/familiar.webp",
+      "name": "Familiar (Bruxo)",
+      "system": {
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "classfeature",
+        "description": {
+          "value": "<p>Seu patrono lhe enviou um familiar, uma criatura mística que o ensina e facilita suas magias. Este familiar segue as regras apresentadas a partir da página 217$ do Livro Básico, embora seja um conduíte direto entre você e seu patrono, além de ser mais poderoso do que outros familiares. Seu familiar recebe uma habilidade de familiar extra, assim como outra habilidade extra adicional no 6º, 12º e 18º níveis.</p>\n<p>Seu familiar é a fonte e repositório das magias que seu patrono lhe concedeu, e você deve comungar com ele para preparar suas magias a cada dia usando sua conjuração de bruxo. Seu familiar conhece 10 truques mágicos e cinco magias de 1º nível, além de uma magia adicional determina pelo tema do seu patrono. Você escolhe estas magias e truques dentre as magias comuns da lista de magias correspondente à tradição de determinada pelo seu patrono ou dentre outras magias dessa tradição às quais tenha acesso.</p>\n<p>A cada vez que você avançar um nível, seu patrono ensina duas novas magias de qualquer nível de magia que você possa conjurar ao seu familiar, escolhidas dentre as magias comuns de sua tradição ou dentre outras magias às quais você tenha acesso. Talentos também podem conceder magias adicionais ao seu familiar.</p>\n<p>Seu familiar pode aprender novas magias independentemente de seu patrono. Ele pode aprender qualquer magia da lista de magias correspondente à sua tradição ao consumir fisicamente um pergaminho dessa magia em um processo que leva 1 hora. Você pode usar a atividade de exploração @Compendium[pf2e.actionspf2e.Q5iIYCFdqJFM31GW]{Aprender uma Magia} para preparar uma versão escrita especial de uma magia, que seu familiar pode então consumir como se fosse um pergaminho. Você e seu familiar podem usar a atividade Aprender uma Magia para que ele aprenda uma magia de um familiar de outro bruxo. Ambos os familiares devem estar presentes durante toda a atividade, a magia deve pertencer à lista de magias correspondente à sua tradição e você deve fornecer materiais para essa atividade, normalmente na forma de uma oferenda para o outro familiar. Você não pode preparar magias do familiar de outro bruxo.</p>\n<p>Se o seu familiar morrer, seu patrono o substitui durante sua próxima preparação diária. O novo familiar pode ser uma duplicata ou reencarnação do antigo, ou então uma entidade completamente nova, mas ele sempre conhecerá as mesmas magias que seu familiar anterior. A morte de seu familiar não afeta quaisquer magias que você já tenha preparadas.</p>",
+          "gm": ""
+        },
+        "level": {
+          "value": 1
+        },
+        "prerequisites": {
+          "value": []
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core",
+          "authors": ""
+        },
+        "rules": [
+          {
+            "key": "ActiveEffectLike",
+            "mode": "add",
+            "path": "system.attributes.familiarAbilities.value",
+            "predicate": [
+              "class:witch"
+            ],
+            "value": "2 + min(3,floor(@actor.level / 6))"
+          },
+          {
+            "key": "GrantItem",
+            "uuid": "Compendium.pf2e.feats-srd.Item.6yPrvbSDaa8glLjn",
+            "flag": "pet"
+          }
+        ],
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "witch"
+          ],
+          "otherTags": []
+        },
+        "slug": "familiar-witch",
+        "_migration": {
+          "version": 0.953,
+          "previous": null
+        },
+        "onlyLevel1": false,
+        "maxTakable": 1,
+        "subfeatures": {
+          "proficiencies": {},
+          "senses": {},
+          "suppressedFeatures": []
+        },
+        "location": "ybDkbCbTWjX5Ydlj"
+      },
+      "type": "feat",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.classfeatures.Item.yksPhweBZYVCsE1A",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769988286252,
+        "modifiedTime": 1769988286252,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 100,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Familiar (Witch)"
+        },
+        "pf2e": {
+          "itemGrants": {
+            "pet": {
+              "id": "DGvsaydKxBO15DCt",
+              "onDelete": "detach"
+            }
+          }
+        }
+      },
+      "_id": "1xatshuB8RhLUSgo",
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "img": "icons/magic/symbols/question-stone-yellow.webp",
+      "name": "Patrono",
+      "system": {
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "classfeature",
+        "description": {
+          "value": "<p>Você não nasceu com o poder de conjurar magias, nem passou anos em devoção a tomos, divindades ou segredos místicos. Suas habilidades se originam através de um ser poderoso que o escolheu como receptáculo para seguir com sua agenda no mundo. Esta entidade normalmente é misteriosa e distante, revelando pouco de sua identidade e motivações e concedendo magias e outros poderes mágicos a você através de um familiar, que serve como conduíte para o seu poder.</p>\n<p>Um patrono pode ser uma divindade ou um semideus, um conventículo de estrigas poderosas, um senhor das fadas, um arquidiabo ou qualquer entidade similarmente potente, ou talvez várias figuras dessas trabalhando em conjunto. Conforme recebe mais do poder de seu patrono, você pode aprender mais sobre ele — certas combinações de temas e lições sugerem patronos ou motivações em particular — porém, patronos empoderam bruxos por suas próprias razões secretas, as quais eles raramente revelam por completo.</p>\n<p>No 1º nível, escolha o tema de seu patrono, que determina sua tradição de magia, uma perícia, um truque mágico especial que você recebe e uma magia adicionada ao seu familiar. Os temas de patrono são os seguintes:</p>\n<ul>\n<li>@Compendium[pf2e.classfeatures.VVMMJdIWL7fAsQf3]{Patrono: Baba Yaga}</li>\n<li>@Compendium[pf2e.classfeatures.NAXRmMjj0gcyD7ie]{Patrono: Maldição}</li>\n<li>@Compendium[pf2e.classfeatures.qMZiTugiLCEmkg8h]{Patrono: Destino}</li>\n<li>@Compendium[pf2e.classfeatures.4IfYHrQMosJNM8hv]{Patrono: Fervor}</li>\n<li>@Compendium[pf2e.classfeatures.XFTWJO6txmLNRLae]{Patrono: Noite}</li>\n<li>@Compendium[pf2e.classfeatures.ejmSQOJR5lJv1pzh]{Patrono: Runas}</li>\n<li>@Compendium[pf2e.classfeatures.x2gzQMPvLwHWDdAC]{Patrono: Ermos}</li>\n<li>@Compendium[pf2e.classfeatures.qf12ubZ07Q0z0NcN]{Patrono: Inverno}</li>\n</ul>",
+          "gm": ""
+        },
+        "level": {
+          "value": 1
+        },
+        "prerequisites": {
+          "value": []
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core",
+          "authors": ""
+        },
+        "rules": [
+          {
+            "adjustName": false,
+            "choices": {
+              "filter": [
+                "item:tag:witch-patron"
+              ]
+            },
+            "flag": "patron",
+            "key": "ChoiceSet",
+            "prompt": "PF2E.SpecificRule.Witch.Patron.Prompt",
+            "selection": "Compendium.pf2e.classfeatures.Item.9OwWgOP8ZWxTAqbg"
+          },
+          {
+            "key": "GrantItem",
+            "uuid": "{item|flags.pf2e.rulesSelections.patron}",
+            "flag": "theResentment"
+          }
+        ],
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "witch"
+          ],
+          "otherTags": []
+        },
+        "slug": "patron",
+        "_migration": {
+          "version": 0.953,
+          "previous": null
+        },
+        "onlyLevel1": false,
+        "maxTakable": 1,
+        "subfeatures": {
+          "proficiencies": {},
+          "senses": {},
+          "suppressedFeatures": []
+        },
+        "location": "ybDkbCbTWjX5Ydlj"
+      },
+      "type": "feat",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.classfeatures.Item.KPtF29AaeX2sJW0K",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769988286252,
+        "modifiedTime": 1769988286252,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 300,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Patron"
+        },
+        "pf2e": {
+          "itemGrants": {
+            "theResentment": {
+              "id": "bEW79QKSlO2vckiJ",
+              "onDelete": "detach"
+            }
+          }
+        }
+      },
+      "_id": "hC7JmZbGNYuVqKql",
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "folder": "waujsnHrfCsPk0zO",
+      "img": "icons/sundries/books/book-red-exclamation.webp",
+      "name": "Animal de Estimação",
+      "system": {
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "general",
+        "description": {
+          "value": "<p>Você tem um animal de estimação — um animal Minúsculo do tipo que você escolher, como um felino, pássaro ou roedor. Ele tem o traço lacaio, o que significa que ele ganha 2 ações durante o seu turno se você usar a ação Comandar um Animal para comandá-lo; isso substitui os efeitos usuais de @UUID[Compendium.pf2e.actionspf2e.Item.q9nbyIF0PEBqMtYe]{Comandar um Animal}, e você não precisa tentar um teste de Natureza. Um animal de estimação não pode fazer Golpes.</p>\n<p><strong>Nível</strong> O nível do seu animal de estimação é igual ao seu.</p>\n<p><strong>Modificadores e CA</strong> Os modificadores de salvamento e CA do seu animal de estimação são iguais aos seus antes de aplicar bônus ou penalidades circunstanciais ou de condição. Ele usa 3 + seu nível como modificador para Percepção, Acrobatismo e Furtividade, e apenas seu nível como modificador para outros testes de perícia. Ele não tem nem usa seus próprios modificadores de atributo e nunca pode se beneficiar de bônus de item.</p>\n<p><strong>Pontos de Vida</strong> Seu animal de estimação tem 5 Pontos de Vida por nível.</p>\n<p><strong>Sentidos</strong> Seu animal de estimação tem visão na penumbra e pode ganhar sentidos adicionais por meio de perícias de animal de estimação.</p>\n<p><strong>Velocidade</strong> Seu animal de estimação tem uma Velocidade de 7,5 metros. Você pode optar por ter um animal de estimação aquático, que respira em água em vez de ar e tem o traço aquático, sem Velocidade terrestre e uma velocidade de natação de 7,5 metros.</p>\n<p><strong>perícias de Animal de Estimação</strong> Quando você adquirir seu animal de estimação, escolha duas das seguintes perícias. Se seu animal de estimação for um animal que naturalmente possui uma dessas perícias (por exemplo, uma coruja possui Velocidade de voo), você deve selecionar essa perícia. Seu animal de estimação não pode ser um animal que naturalmente possui mais perícias de animal de estimação do que o máximo. Em alguns casos, o Mestre pode adicionar algumas perícias de familiar às perícias de animal de estimação que você pode escolher.</p>\n<ul>\n<li><strong>Anfíbio</strong> Ele ganha o traço anfíbio, permitindo que respire tanto em ar quanto em água, e tem tanto uma Velocidade terrestre quanto uma velocidade de natação, cada uma igual à sua maior Velocidade terrestre ou de natação.</li>\n<li><strong>Escavador</strong> Ele ganha uma velocidade de escavação de 1,5 metros, permitindo cavar buracos Minúsculos.</li>\n<li><strong>Escalador</strong> Ele ganha uma velocidade de escalada de 7,5 metros.</li>\n<li><strong>Visão no Escuro</strong> Ele ganha visão no escuro.</li>\n<li><strong>Ecolocalização</strong> Seu animal de estimação pode usar a audição como um sentido preciso em um raio de 6 metros.</li>\n<li><strong>Movimento Veloz</strong> Aumente uma das Velocidades do animal de estimação de 7,5 metros para 12 metros.</li>\n<li><strong>Voador</strong> Ele ganha uma velocidade de voo de 7,5 metros.</li>\n<li><strong>Destreza Manual</strong> Ele pode usar até dois de seus membros como se fossem mãos para realizar ações de manuseio.</li>\n<li><strong>Faro</strong> Seu animal de estimação pode usar faro como um sentido impreciso em um raio de 9 metros.</li>\n<li><strong>Resistente</strong> O PV máximo do seu animal de estimação aumenta em 2 por nível.</li>\n</ul>\n<hr />\n<p><strong>Especial</strong> Você pode adquirir um novo animal de estimação ao retreinar este talento, liberando qualquer animal de estimação anterior que você possui. Se você posteriormente adquirir um familiar ou outro companheiro que use o talento de Animal de Estimação, você pode imediatamente retreinar este talento.</p>",
+          "gm": ""
+        },
+        "level": {
+          "value": 1
+        },
+        "prerequisites": {
+          "value": []
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core",
+          "authors": ""
+        },
+        "rules": [
+          {
+            "key": "ActiveEffectLike",
+            "mode": "upgrade",
+            "path": "system.attributes.familiarAbilities.value",
+            "priority": 19,
+            "value": 2
+          }
+        ],
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "general"
+          ],
+          "otherTags": []
+        },
+        "slug": "pet",
+        "_migration": {
+          "version": 0.953,
+          "previous": null
+        },
+        "onlyLevel1": false,
+        "maxTakable": 1,
+        "subfeatures": {
+          "proficiencies": {},
+          "senses": {},
+          "suppressedFeatures": []
+        },
+        "location": null
+      },
+      "type": "feat",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.feats-srd.Item.6yPrvbSDaa8glLjn",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769988286252,
+        "modifiedTime": 1769988286252,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Pet"
+        },
+        "pf2e": {
+          "grantedBy": {
+            "id": "1xatshuB8RhLUSgo",
+            "onDelete": "cascade"
+          }
+        }
+      },
+      "_id": "DGvsaydKxBO15DCt",
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "img": "icons/magic/unholy/hand-light-green.webp",
+      "name": "The Resentment",
+      "system": {
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "classfeature",
+        "description": {
+          "value": "<p>A single feeling radiated from your patron in the moment you met them, as palpable as heat from a fire: the desire to see every tall poppy felled and every proud nail hammered down, whether to righteously bring justice for small folk or the base urge to see the powerful defeated. Your patron is likely far from the upper echelons of its kind, such as a hag ousted from its coven or a quasi-divinity or a lower-rank demon. This leaves it only subtler and weaker tools to see its ends met: curses, hexes, and you.</p>\n<p><strong>Spell List</strong> occult</p>\n<p><strong>Patron Skill</strong> Occultism</p>\n<p><strong>Lesson of Strength's Impermanence</strong> Your patron has taught you that power can be taken much more easily that it can be built. You gain the @UUID[Compendium.pf2e.spells-srd.Item.f45JpY7Ph2cAJGW2]{Evil Eye} hex cantrip and your familiar learns @UUID[Compendium.pf2e.spells-srd.Item.J7Y7tl0bbdz7TcCc]{Enfeeble}.</p>\n<p><strong>Familiar of Ongoing Misery</strong> Your familiar seems hostile to all creatures other than you, hissing at them if they get too near. When you Cast or Sustain a hex, your familiar can curse a creature within 15 feet of it, prolonging the duration of any negative conditions affecting it by 1 round. This is a curse effect. This prolongs only conditions with a timed duration (such as \"1 round\" or \"until the end of your next turn\") and doesn't prevent conditions from being removed by other means.</p>",
+          "gm": ""
+        },
+        "level": {
+          "value": 1
+        },
+        "prerequisites": {
+          "value": []
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core",
+          "authors": ""
+        },
+        "rules": [
+          {
+            "key": "ActiveEffectLike",
+            "mode": "upgrade",
+            "path": "system.skills.occultism.rank",
+            "value": 1
+          },
+          {
+            "key": "ActiveEffectLike",
+            "mode": "override",
+            "path": "system.proficiencies.aliases.witch",
+            "priority": 39,
+            "value": "occult"
+          },
+          {
+            "itemType": "spell",
+            "key": "ItemAlteration",
+            "mode": "add",
+            "predicate": [
+              "class:witch",
+              "item:trait:hex"
+            ],
+            "property": "description",
+            "value": [
+              {
+                "text": "PF2E.SpecificRule.Witch.Patron.FamiliarAbility.OngoingMisery.Description",
+                "title": "PF2E.SpecificRule.Witch.Patron.FamiliarAbility.OngoingMisery.Title"
+              }
+            ]
+          }
+        ],
+        "traits": {
+          "otherTags": [
+            "witch-patron"
+          ],
+          "rarity": "common",
+          "value": [
+            "witch"
+          ]
+        },
+        "slug": "the-resentment",
+        "_migration": {
+          "version": 0.953,
+          "previous": null
+        },
+        "onlyLevel1": false,
+        "maxTakable": 1,
+        "subfeatures": {
+          "proficiencies": {},
+          "senses": {},
+          "suppressedFeatures": []
+        },
+        "location": null
+      },
+      "type": "feat",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.classfeatures.Item.9OwWgOP8ZWxTAqbg",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769988286252,
+        "modifiedTime": 1769988286252,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": false,
+          "originalName": "The Resentment"
+        },
+        "pf2e": {
+          "grantedBy": {
+            "id": "hC7JmZbGNYuVqKql",
+            "onDelete": "cascade"
+          }
+        }
+      },
+      "_id": "bEW79QKSlO2vckiJ",
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "img": "systems/pf2e/icons/features/classes/witch-spellcasting.webp",
+      "name": "Conjuração de Bruxo",
+      "system": {
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "classfeature",
+        "description": {
+          "value": "<p>Utilizando seu familiar como um conduíte, seu patrono lhe fornece o poder de conjurar magias. Você pode conjurar magias usando a atividade @Compendium[pf2e.actionspf2e.aBQ8ajvEBByv45yz]{Conjurar uma Magia} e pode providenciar componentes materiais, somáticos e verbais quando conjurar magias</p>\n<p>No 1º nível, a cada manhã você pode preparar duas magias de 1º nível e cinco truques mágicos dentre as opções que seu familiar conhecer. Magias preparadas permanecem disponíveis até você conjurá-las ou preparar suas magias novamente. A quantidade de magias que você pode preparar é chamada de espaços de magia.</p>\n<p>Conforme avança de nível como bruxo, a quantidade de magias que você pode preparar por dia aumenta, assim como o maior nível de magia que você é capaz de conjurar.</p>\n<p>Algumas de suas magias exigem que você faça uma rolagem de ataque de magia para determinar sua efetividade, enquanto outras fazem com que seus inimigos rolem contra sua CD de magia (tipicamente ao tentar uma jogada de salvamento). Como seu atributo chave é Inteligência, suas rolagens de ataque de magia e CDs de magia utilizam seu modificador de Inteligência.</p>\n<h3>Elevar Magias</h3>\n<p>Quando receber espaços de magia de 2º nível e superiores, você pode preencher estes espaços com versões mais fortes de magias de níveis inferiores. Isto aumenta o nível da magia para corresponder ao nível do espaço de magia usado. Muitas magias possuem aprimoramentos específicos quando são elevadas para determinados níveis.</p>\n<h3>Truques Mágicos</h3>\n<p>Um truque mágico é um tipo especial de magia que não usa espaços de magia. Você pode conjurar um truque mágico à vontade, qualquer quantidade de vezes por dia. Um truque mágico sempre é automaticamente elevado à metade de seu nível de personagem arredondada para cima — isto normalmente é igual ao maior nível de magia que você é capaz de conjurar como um bruxo. Por exemplo: como um bruxo de 1º nível, seus truques mágicos são magias de 1º nível, enquanto que, como um bruxo de 5º nível, seus truques mágicos são magias de 3º nível.</p>",
+          "gm": ""
+        },
+        "level": {
+          "value": 1
+        },
+        "prerequisites": {
+          "value": []
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core",
+          "authors": ""
+        },
+        "rules": [],
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "witch"
+          ],
+          "otherTags": []
+        },
+        "slug": "witch-spellcasting",
+        "_migration": {
+          "version": 0.953,
+          "previous": null
+        },
+        "onlyLevel1": false,
+        "maxTakable": 1,
+        "subfeatures": {
+          "proficiencies": {},
+          "senses": {},
+          "suppressedFeatures": []
+        },
+        "location": "ybDkbCbTWjX5Ydlj"
+      },
+      "type": "feat",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.classfeatures.Item.zT6QiTMxxj8JYoN9",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769988286252,
+        "modifiedTime": 1769988286252,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Witch Spellcasting"
+        }
+      },
+      "_id": "xuZpCewHjTkIJH03",
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "img": "systems/pf2e/icons/features/classes/hexes.webp",
+      "name": "Hex Spells",
+      "system": {
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "classfeature",
+        "description": {
+          "value": "<p>As a favored agent of your patron, you can invoke their power for a more direct magical intervention. A hex is a spell shaped by your patron and sent to you through your familiar, rather than an ability you use directly. Your patron expects you to advance its interests and does not take kindly to repeated requests for aid; as such, you can use only one hex each turn, and any attempts to use a second hex on that turn fail and the actions are lost.</p>\n<p>Hex spells are a type of focus spell. It costs 1 Focus Point to cast a focus spell, and you start with a focus pool of 1 Focus Point. You refill your focus pool during your daily preparations, and you can regain 1 Focus Point by spending 10 minutes using the Refocus activity to commune with your familiar.</p>\n<p>Focus spells are automatically heightened to half your level rounded up, much like cantrips. Focus spells don't require spell slots, and you can't cast them using spell slots. Certain feats give you more focus spells. The maximum Focus Points your focus pool can hold is equal to the number of focus spells you have, but it can never be more than 3 points.</p>\n<p>You learn your choice of the @UUID[Compendium.pf2e.spells-srd.Item.aq1yonHeYpbaj3XI]{Patron's Puppet} hex or @UUID[Compendium.pf2e.spells-srd.Item.rMOI8JFJ0nT2mrCF]{Phase Familiar} hex, which let you command your familiar or defend it from harm, respectively. You learn most other hexes from witch lessons.</p>\n<h2>Hex Cantrips</h2>\n<p>Hex cantrips are special hexes that don't cost Focus Points, so you can cast them as often as you like, though you can still use only one hex each round. Hex cantrips are in addition to the cantrips you choose with witch spellcasting and aren't counted toward your prepared cantrips.</p>\n<p>You gain a hex cantrip determined by your choice of patron.</p>",
+          "gm": ""
+        },
+        "level": {
+          "value": 1
+        },
+        "prerequisites": {
+          "value": []
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core",
+          "authors": ""
+        },
+        "rules": [],
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "witch"
+          ],
+          "otherTags": []
+        },
+        "slug": "hex-spells",
+        "_migration": {
+          "version": 0.953,
+          "previous": null
+        },
+        "onlyLevel1": false,
+        "maxTakable": 1,
+        "subfeatures": {
+          "proficiencies": {},
+          "senses": {},
+          "suppressedFeatures": []
+        },
+        "location": "ybDkbCbTWjX5Ydlj"
+      },
+      "type": "feat",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.classfeatures.Item.9uLh5z2uPo6LDFRY",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769988286252,
+        "modifiedTime": 1769988286252,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 200,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": false,
+          "originalName": "Hex Spells"
+        }
+      },
+      "_id": "GjdKVPqEyFr42qvW",
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "9MOHjCsvKAeuTbEt",
+      "folder": "r78vU8NIdH9kOhPS",
+      "img": "icons/sundries/books/book-red-exclamation.webp",
+      "name": "Magia de Outro Mundo",
+      "system": {
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "ancestry",
+        "description": {
+          "value": "<p>Seu Élfico magia se manifesta como uma simples magia arcana, mesmo que você não tenha treinamento formal em magia. Escolha um truque mágico da lista de magias arcana. Você pode conjurar este truque mágico como um truque mágico inato arcana à vontade. Um truque mágico é elevado a um nível de magia igual a metade do seu nível arredondado para cima.</p>",
+          "gm": ""
+        },
+        "level": {
+          "value": 1,
+          "taken": 1
+        },
+        "prerequisites": {
+          "value": []
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core",
+          "authors": ""
+        },
+        "rules": [],
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "elf"
+          ],
+          "otherTags": []
+        },
+        "slug": "otherworldly-magic",
+        "_migration": {
+          "version": 0.953,
+          "previous": null
+        },
+        "onlyLevel1": false,
+        "maxTakable": 1,
+        "subfeatures": {
+          "proficiencies": {},
+          "senses": {},
+          "suppressedFeatures": []
+        },
+        "location": "ancestry-1"
+      },
+      "type": "feat",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.feats-srd.Item.Pat4H0VbmApblZxc",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769988887560,
+        "modifiedTime": 1769988887560,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Otherworldly Magic"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Magias Arcana Inata",
+      "type": "spellcastingEntry",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": ""
+        },
+        "rules": [],
+        "slug": null,
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null
+        },
+        "traits": {
+          "otherTags": []
+        },
+        "publication": {
+          "title": "",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "ability": {
+          "value": "int"
+        },
+        "spelldc": {
+          "value": 0,
+          "dc": 0
+        },
+        "tradition": {
+          "value": "arcane"
+        },
+        "prepared": {
+          "value": "innate"
+        },
+        "showSlotlessLevels": {
+          "value": true
+        },
+        "proficiency": {
+          "value": 1,
+          "slug": ""
+        },
+        "slots": {
+          "slot0": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot1": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot2": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot3": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot4": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot5": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot6": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot7": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot8": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot9": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot10": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot11": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          }
+        },
+        "autoHeightenLevel": {
+          "value": null
+        }
+      },
+      "_id": "3Ae7kkYeqYaoLY37",
+      "img": "systems/pf2e/icons/default-icons/spellcastingEntry.svg",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769988898212,
+        "modifiedTime": 1769988898212,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "folder": "D7UVaOiB40wTR6kv",
+      "img": "systems/pf2e/icons/spells/disapperance.webp",
+      "name": "Torturous Trauma",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>With this spell born of Kemnebi's sadistic love of torture, you batter a creature's internal organs, leaving no external signs of the immense pain you delivered. The target takes bludgeoning damage equal to 1d4 + your spellcasting modifier with a basic Fortitude save. If it critically fails, the target is also @UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{Fatigued} until the start of your next turn. Creatures that lack internal organs are unaffected by this spell.</p>\n<hr />\n<p><strong>Heightened (+1)</strong> The bludgeoning damage increases by 1d4.</p>"
+        },
+        "rules": [],
+        "slug": "torturous-trauma",
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "cantrip",
+            "concentrate",
+            "manipulate",
+            "nonlethal"
+          ],
+          "rarity": "uncommon",
+          "traditions": [
+            "arcane",
+            "divine"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder #186: A Fúria do Rei Fantasma",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": "1 living creature"
+        },
+        "range": {
+          "value": "30 feet"
+        },
+        "area": null,
+        "time": {
+          "value": "2"
+        },
+        "duration": {
+          "value": "",
+          "sustained": false
+        },
+        "damage": {
+          "Xf082AUJaiQvTqg7": {
+            "applyMod": true,
+            "category": null,
+            "formula": "1d4",
+            "kinds": [
+              "damage"
+            ],
+            "materials": [],
+            "type": "bludgeoning"
+          }
+        },
+        "defense": {
+          "save": {
+            "basic": true,
+            "statistic": "fortitude"
+          }
+        },
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "3Ae7kkYeqYaoLY37"
+        },
+        "counteraction": false,
+        "heightening": {
+          "damage": {
+            "Xf082AUJaiQvTqg7": "1d4"
+          },
+          "interval": 1,
+          "type": "interval"
+        }
+      },
+      "type": "spell",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.spells-srd.Item.zHSp4PzoOE72DV4o",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769989063383,
+        "modifiedTime": 1769989063383,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Torturous Trauma"
+        }
+      },
+      "_id": "ByNBUxLLD4sXPO8y",
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Magias Arcana Preparada",
+      "type": "spellcastingEntry",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": ""
+        },
+        "rules": [],
+        "slug": null,
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null
+        },
+        "traits": {
+          "otherTags": []
+        },
+        "publication": {
+          "title": "",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "ability": {
+          "value": ""
+        },
+        "spelldc": {
+          "value": 0,
+          "dc": 0
+        },
+        "tradition": {
+          "value": "arcane"
+        },
+        "prepared": {
+          "value": "prepared",
+          "flexible": false
+        },
+        "showSlotlessLevels": {
+          "value": true
+        },
+        "proficiency": {
+          "value": 1,
+          "slug": "witch"
+        },
+        "slots": {
+          "slot0": {
+            "prepared": [],
+            "value": 0,
+            "max": 5
+          },
+          "slot1": {
+            "prepared": [],
+            "value": 0,
+            "max": 2
+          },
+          "slot2": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot3": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot4": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot5": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot6": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot7": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot8": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot9": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot10": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot11": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          }
+        },
+        "autoHeightenLevel": {
+          "value": null
+        }
+      },
+      "_id": "orJJCb0N6H0ga322",
+      "img": "systems/pf2e/icons/default-icons/spellcastingEntry.svg",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769989557231,
+        "modifiedTime": 1769989585214,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "ovRetTIx08yS49pD",
+      "folder": "D7UVaOiB40wTR6kv",
+      "img": "systems/pf2e/icons/spells/daze.webp",
+      "name": "Pasmar",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>You push into the target's mind and daze it with a mental jolt. The jolt deals 1d6 mental damage, with a basic Will save. If the target critically fails the save, it is also @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1}.</p>\n<hr />\n<p><strong>Heightened (+2)</strong> The damage increases by 1d6.</p>"
+        },
+        "rules": [],
+        "slug": "daze",
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "cantrip",
+            "concentrate",
+            "manipulate",
+            "mental",
+            "nonlethal"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "divine",
+            "occult"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": "1 creature"
+        },
+        "range": {
+          "value": "60 feet"
+        },
+        "area": null,
+        "time": {
+          "value": "2"
+        },
+        "duration": {
+          "value": "",
+          "sustained": false
+        },
+        "damage": {
+          "0": {
+            "applyMod": false,
+            "category": null,
+            "formula": "1d6",
+            "kinds": [
+              "damage"
+            ],
+            "materials": [],
+            "type": "mental"
+          }
+        },
+        "defense": {
+          "save": {
+            "basic": true,
+            "statistic": "will"
+          }
+        },
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "orJJCb0N6H0ga322"
+        },
+        "counteraction": false,
+        "heightening": {
+          "damage": {
+            "0": "1d6"
+          },
+          "interval": 2,
+          "type": "interval"
+        }
+      },
+      "type": "spell",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.spells-srd.Item.4gBIw4IDrSfFHik4",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769989860195,
+        "modifiedTime": 1769989860195,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Daze"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "sv6ajKZ4NUUpHenN",
+      "folder": "D7UVaOiB40wTR6kv",
+      "img": "icons/magic/light/explosion-star-glow-silhouette.webp",
+      "name": "Read Aura",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>You focus on the target object, opening your mind to perceive magical auras. When the casting is complete, you know whether that item is magical. You or anyone you advise about the aura gains a +2 circumstance bonus to @UUID[Compendium.pf2e.actionspf2e.Item.eReSHVEPCsdkSL4G]{Identify Magic} on the item. If the object is illusory, you detect this only if the effect's rank is lower than the rank of your <em>read aura</em> spell.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.J6OhRNSN23KzOPRL]{Spell Effect: Read Aura}</p><hr /><p><strong>Heightened (3rd)</strong> You can target up to 10 objects.</p>\n<p><strong>Heightened (6th)</strong> You can target any number of objects.</p>"
+        },
+        "rules": [],
+        "slug": "read-aura",
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "cantrip",
+            "concentrate",
+            "detection",
+            "manipulate"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "divine",
+            "occult",
+            "primal"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": "1 object"
+        },
+        "range": {
+          "value": "30 feet"
+        },
+        "area": null,
+        "time": {
+          "value": "1 minute"
+        },
+        "duration": {
+          "value": "",
+          "sustained": false
+        },
+        "damage": {},
+        "defense": null,
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "orJJCb0N6H0ga322"
+        },
+        "counteraction": false,
+        "heightening": {
+          "levels": {
+            "3": {
+              "target": {
+                "value": "10 objects"
+              }
+            },
+            "6": {
+              "target": {
+                "value": "any number of objects"
+              }
+            }
+          },
+          "type": "fixed"
+        }
+      },
+      "type": "spell",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.spells-srd.Item.OhD2Z6rIGGD5ocZA",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769989908606,
+        "modifiedTime": 1769989908606,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Read Aura"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "9ZlKVqMxne7O33L3",
+      "folder": "D7UVaOiB40wTR6kv",
+      "img": "systems/pf2e/icons/spells/chill-touch.webp",
+      "name": "Void Warp",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>You call upon the Void to harm life force. The target takes 2d4 void damage with a basic Fortitude save. On a critical failure, the target is also @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} until the start of your next turn.</p>\n<hr />\n<p><strong>Heightened (+1)</strong> The damage increases by 1d4.</p>"
+        },
+        "rules": [],
+        "slug": "void-warp",
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "cantrip",
+            "concentrate",
+            "manipulate",
+            "void"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "divine",
+            "occult"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": "1 living creature"
+        },
+        "range": {
+          "value": "30 feet"
+        },
+        "area": null,
+        "time": {
+          "value": "2"
+        },
+        "duration": {
+          "value": "",
+          "sustained": false
+        },
+        "damage": {
+          "0": {
+            "applyMod": false,
+            "category": null,
+            "formula": "2d4",
+            "kinds": [
+              "damage"
+            ],
+            "materials": [],
+            "type": "void"
+          }
+        },
+        "defense": {
+          "save": {
+            "basic": true,
+            "statistic": "fortitude"
+          }
+        },
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "orJJCb0N6H0ga322"
+        },
+        "counteraction": false,
+        "heightening": {
+          "damage": {
+            "0": "1d4"
+          },
+          "interval": 1,
+          "type": "interval"
+        }
+      },
+      "type": "spell",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.spells-srd.Item.mAMEt4FFbdqoRnkN",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769990025326,
+        "modifiedTime": 1769990025326,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Void Warp"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "NXHybER3RdeS49o0",
+      "folder": "D7UVaOiB40wTR6kv",
+      "img": "systems/pf2e/icons/spells/join-pasts.webp",
+      "name": "Unir Passados",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Você toca as testas dos alvos e os coloca em uma comunhão mental. Os alvos podem partilhar pensamentos e experiências, mas não palavras. Quando um dos alvos tentar  Recordar Conhecimento, um outro pode  Auxiliar o teste de perícia do primeiro alvo, utilizando qualquer  perícia Saber (mesmo que esse Saber normalmente não fosse ser aplicável) sem ter feito qualquer preparação para Auxiliar.</p><hr /><p><strong>Elevada (+1)</strong> Você pode tocar um alvo adicional para incluí-lo nos efeitos da magia. Vários alvos podem fazer testes para Auxiliar o alvo que esteja tentando Recordar Conhecimento.</p>"
+        },
+        "rules": [],
+        "slug": "join-pasts",
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "cantrip",
+            "manipulate",
+            "mental"
+          ],
+          "rarity": "uncommon",
+          "traditions": [
+            "occult"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder #147: O Amanhã Deve Queimar",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": "2 willing creatures"
+        },
+        "range": {
+          "value": "touch"
+        },
+        "area": null,
+        "time": {
+          "value": "1"
+        },
+        "duration": {
+          "value": "1 round",
+          "sustained": false
+        },
+        "damage": {},
+        "defense": null,
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "orJJCb0N6H0ga322"
+        },
+        "counteraction": false
+      },
+      "type": "spell",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.spells-srd.Item.8bdt1TvNKzsCu9Ct",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769990041910,
+        "modifiedTime": 1769990041910,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Join Pasts"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "Fm2aepvEX7yPebqz",
+      "folder": "D7UVaOiB40wTR6kv",
+      "img": "icons/magic/fire/flame-burning-embers-yellow.webp",
+      "name": "Wash Your Luck",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Some practitioners argue this spell literally washes your fortunes of all influences, malign or benign, while others claim it simply cleanses your mind of obsessions about luck and destiny. You adjust your garments, change the posture of your chair, fidget with a religious symbol, or make some other innocuous and personally significant action to wash away bad luck.</p>\n<p>Once during the spell's duration, before rolling a check, you can cancel out a misfortune effect on that roll, as normal when a fortune and misfortune effect apply to the same roll. After canceling out the misfortune effect, the spell ends, and you are then temporarily immune to wash your luck for 10 minutes.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.npFFTAxN44WWrGnM]{Spell Effect: Wash Your Luck}</p>"
+        },
+        "rules": [],
+        "slug": "wash-your-luck",
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "cantrip",
+            "concentrate",
+            "fortune",
+            "manipulate"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "divine",
+            "occult"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Secrets of Magic",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": ""
+        },
+        "range": {
+          "value": ""
+        },
+        "area": null,
+        "time": {
+          "value": "2"
+        },
+        "duration": {
+          "value": "1 minute",
+          "sustained": false
+        },
+        "damage": {},
+        "defense": null,
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "orJJCb0N6H0ga322"
+        },
+        "counteraction": false
+      },
+      "type": "spell",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.spells-srd.Item.lmHmKGs1N3yNAvln",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769990155746,
+        "modifiedTime": 1769990155746,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": false,
+          "originalName": "Wash Your Luck"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "4H22NtjBSsuTIVGk",
+      "folder": "D7UVaOiB40wTR6kv",
+      "img": "systems/pf2e/icons/spells/mage-hand.webp",
+      "name": "Telekinetic Hand",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>You create a floating, magical hand, either invisible or ghostlike, that grasps the target object and levitates it slowly up to 20 feet in any direction. When you Sustain the spell, you can move the object an additional 20 feet. If the object is in the air when the spell ends, the object falls.</p>\n<hr />\n<p><strong>Heightened (3rd)</strong> You can target an unattended object with a Bulk of 1 or less.</p>\n<p><strong>Heightened (5th)</strong> The range increases to 60 feet, and you can target an unattended object with a Bulk of 1 or less.</p>\n<p><strong>Heightened (7th)</strong> The range increases to 60 feet, and you can target an unattended object with a Bulk of 2 or less.</p>"
+        },
+        "rules": [],
+        "slug": "telekinetic-hand",
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "cantrip",
+            "concentrate",
+            "manipulate"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "occult"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": "1 unattended object of light Bulk or less"
+        },
+        "range": {
+          "value": "30 feet"
+        },
+        "area": null,
+        "time": {
+          "value": "2"
+        },
+        "duration": {
+          "value": "",
+          "sustained": true
+        },
+        "damage": {},
+        "defense": null,
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "orJJCb0N6H0ga322"
+        },
+        "counteraction": false,
+        "heightening": {
+          "levels": {
+            "3": {
+              "target": {
+                "value": "1 unattended object with a Bulk of 1 or less"
+              }
+            },
+            "5": {
+              "range": {
+                "value": "60 feet"
+              }
+            },
+            "7": {
+              "target": {
+                "value": "1 unattended object with a Bulk of 2 or less"
+              }
+            }
+          },
+          "type": "fixed"
+        }
+      },
+      "type": "spell",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.spells-srd.Item.pwzdSlJgYqN7bs2w",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769990254845,
+        "modifiedTime": 1769990254845,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": false,
+          "originalName": "Telekinetic Hand"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "h6ZjppImdqVCjDyL",
+      "folder": "D7UVaOiB40wTR6kv",
+      "img": "icons/magic/symbols/runes-triangle-blue.webp",
+      "name": "Prestidigitation",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>The simplest magic does your bidding. You can perform simple magical effects for as long as you Sustain the spell. Each time you Sustain the spell, you can choose one of four options.</p><ul><li><strong>Cook</strong> Cool, warm, or flavor 1 pound of nonliving material.</li><li><strong>Lift</strong> Slowly lift an unattended object of light Bulk or less 1 foot off the ground.</li><li><strong>Make</strong> Create a temporary object of negligible Bulk, made of congealed magical substance. The object looks crude and artificial and is extremely fragile-it can't be used as a tool, weapon, or locus or cost for a spell.</li><li><strong>Tidy</strong> Color, clean, or soil an object of light Bulk or less. You can affect an object of 1 Bulk with 10 rounds of concentration, and a larger object at 1 minute per Bulk.</li></ul><p><em>Prestidigitation</em> can't deal damage or cause adverse conditions. Any actual change to an object (beyond what is noted above) persists only as long as you Sustain the spell.</p>"
+        },
+        "rules": [],
+        "slug": "prestidigitation",
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "cantrip",
+            "concentrate",
+            "manipulate"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "divine",
+            "occult",
+            "primal"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": "1 object (cook, lift, or tidy only)"
+        },
+        "range": {
+          "value": "10 feet"
+        },
+        "area": null,
+        "time": {
+          "value": "2"
+        },
+        "duration": {
+          "value": "",
+          "sustained": true
+        },
+        "damage": {},
+        "defense": null,
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "orJJCb0N6H0ga322"
+        },
+        "counteraction": false
+      },
+      "type": "spell",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.spells-srd.Item.Qw3fnUlaUbnn7ipC",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769990296956,
+        "modifiedTime": 1769990296956,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": false,
+          "originalName": "Prestidigitation"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "uAZJmkZrCoMc3uNT",
+      "folder": "D7UVaOiB40wTR6kv",
+      "img": "systems/pf2e/icons/spells/phase-bolt.webp",
+      "name": "Phase Bolt",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>You point your finger and project a bolt of magical energy that stutters in and out of phase until it reaches the target. Make a ranged spell attack roll against your target's AC; if the target has any circumstance bonuses to AC (such as from a shield or cover), reduce that bonus by 2 for this attack. On a success, you deal [[/r 1d4[piercing]]] damage plus your spellcasting ability modifier. On a critical success, the target takes double damage.</p>\n<hr />\n<p><strong>Heightened (+1)</strong> The bolt's damage increases by [[/r 1d4]]{1d4}.</p>"
+        },
+        "rules": [
+          {
+            "key": "EphemeralEffect",
+            "predicate": [
+              "item:slug:phase-bolt"
+            ],
+            "selectors": [
+              "spell-attack-roll"
+            ],
+            "uuid": "Compendium.pf2e.spell-effects.Item.ZVPlFsk5Zimd8Mc9"
+          }
+        ],
+        "slug": "phase-bolt",
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "attack",
+            "cantrip",
+            "concentrate",
+            "manipulate"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "occult"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Dark Archive",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": "1 creature"
+        },
+        "range": {
+          "value": "30 feet"
+        },
+        "area": null,
+        "time": {
+          "value": "2"
+        },
+        "duration": {
+          "value": "",
+          "sustained": false
+        },
+        "damage": {
+          "nqp6byhfcwbvtstj": {
+            "applyMod": false,
+            "category": null,
+            "formula": "3d4",
+            "kinds": [
+              "damage"
+            ],
+            "materials": [],
+            "type": "piercing"
+          }
+        },
+        "defense": null,
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "orJJCb0N6H0ga322"
+        },
+        "counteraction": false,
+        "heightening": {
+          "damage": {
+            "nqp6byhfcwbvtstj": "1d4"
+          },
+          "interval": 1,
+          "type": "interval"
+        }
+      },
+      "type": "spell",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.spells-srd.Item.5gophZ4AOKW4VW27",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769990335532,
+        "modifiedTime": 1769990335532,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Phase Bolt"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "ZBP8WCDnpXQkV0Cf",
+      "folder": "D7UVaOiB40wTR6kv",
+      "img": "systems/pf2e/icons/spells/eat-fire.webp",
+      "name": "Eat Fire",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p><strong>Trigger</strong> You would take fire damage.</p>\n<hr />\n<p>You consume and ingest fire, making it less harmful to you. You gain resistance 5 to fire damage until the end of the current turn. During the remaining duration of the spell, you can use the Belch Smoke action. The spell ends if you fall @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious}, inhale, or exhale (this includes speaking).</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.BGv44XBGtD4zOJBd]{Spell Effect: Eat Fire}</p>\n<p><strong>Belch Smoke</strong> <span class=\"action-glyph\">1</span> You exhale what remains of the smoke, ending the spell and creating a smoke cloud in a @Template[burst|distance:5] within 20 feet. All creatures within the smoke cloud are @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed}, and all other creatures are concealed to them. The smoke lasts for 1 minute or until dispersed by a strong wind.</p>\n<hr />\n<p><strong>Heightened (+3)</strong> The resistance increases by 5.</p>"
+        },
+        "rules": [],
+        "slug": "eat-fire",
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "cantrip",
+            "fire",
+            "manipulate"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "occult",
+            "primal"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder A Ira dos Elementos",
+          "authors": "",
+          "license": "OGL",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": ""
+        },
+        "range": {
+          "value": ""
+        },
+        "area": null,
+        "time": {
+          "value": "reaction"
+        },
+        "duration": {
+          "value": "until the end of your next turn",
+          "sustained": false
+        },
+        "damage": {},
+        "defense": null,
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "orJJCb0N6H0ga322"
+        },
+        "counteraction": false
+      },
+      "type": "spell",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.spells-srd.Item.FWuLUKIbkJZjBiuA",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769990402984,
+        "modifiedTime": 1769990402984,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": false,
+          "originalName": "Eat Fire"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "aG9ECUvQ63B6F2Ro",
+      "folder": "D7UVaOiB40wTR6kv",
+      "img": "systems/pf2e/icons/spells/shield.webp",
+      "name": "Escudo",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>You raise a magical shield of force. This counts as using the Raise a Shield action, giving you a +1 circumstance bonus to AC until the start of your next turn, but it doesn't require a hand to use.</p>\n<p>While the spell is in effect, you can use the @UUID[Compendium.pf2e.feats-srd.Item.jM72TjJ965jocBV8]{Shield Block} reaction with your magic shield. The shield has Hardness 5. You can use the spell's reaction to reduce damage from any spell or magical effect, even if it doesn't deal physical damage. After you use Shield Block, the spell ends and you can't cast it again for 10 minutes.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.Jemq5UknGdMO7b73]{Spell Effect: Shield}</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.QF6RDlCoTvkVHRo4]{Effect: Shield Immunity}</p>\n<hr />\n<p><strong>Heightened (+2)</strong> The shield's Hardness increases by 5.</p>"
+        },
+        "rules": [],
+        "slug": "shield",
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "cantrip",
+            "concentrate",
+            "force"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "divine",
+            "occult"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": ""
+        },
+        "range": {
+          "value": ""
+        },
+        "area": null,
+        "time": {
+          "value": "1"
+        },
+        "duration": {
+          "value": "until the start of your next turn",
+          "sustained": false
+        },
+        "damage": {},
+        "defense": null,
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "orJJCb0N6H0ga322"
+        },
+        "counteraction": false
+      },
+      "type": "spell",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.spells-srd.Item.TVKNbcgTee19PXZR",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769990497607,
+        "modifiedTime": 1769990497607,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Shield"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "1Ivli981sLSYLvE4",
+      "folder": "T8AzYUgNIAgTJ9Iz",
+      "img": "systems/pf2e/icons/spells/ray-of-enfeeblement.webp",
+      "name": "Enfeeble",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>You sap the target's strength, depending on its Fortitude save.</p>\n<hr />\n<p><strong>Critical Success</strong> The target is unaffected.</p>\n<p><strong>Success</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} until the start of your next turn.</p>\n<p><strong>Failure</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 2} for 1 minute.</p>\n<p><strong>Critical Failure</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 3} for 1 minute.</p>"
+        },
+        "rules": [],
+        "slug": "enfeeble",
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "concentrate",
+            "manipulate"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "divine",
+            "occult"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": "1 creature"
+        },
+        "range": {
+          "value": "30 feet"
+        },
+        "area": null,
+        "time": {
+          "value": "2"
+        },
+        "duration": {
+          "value": "varies",
+          "sustained": false
+        },
+        "damage": {},
+        "defense": {
+          "save": {
+            "basic": false,
+            "statistic": "fortitude"
+          }
+        },
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "orJJCb0N6H0ga322"
+        },
+        "counteraction": false
+      },
+      "type": "spell",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.spells-srd.Item.J7Y7tl0bbdz7TcCc",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769990551508,
+        "modifiedTime": 1769990551508,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Enfeeble"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "87a3mbWMYSee1KAx",
+      "folder": "T8AzYUgNIAgTJ9Iz",
+      "img": "icons/magic/control/fear-fright-white.webp",
+      "name": "Confundir",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p> Você semeia confusão na mente do seu alvo, fazendo com que suas ações e pensamentos se tornem desajeitados.   <strong>Sucesso Crítico</strong> O alvo não é afetado. <strong>Sucesso</strong> O alvo fica @Compendium[pf2e.conditionitems.i3OJZU2nk64Df3xm]{Desajeitado} 1 e @Compendium[pf2e.conditionitems.e1XGnhKNSQIm5IXg]{Estupefato} 1. <strong>Falha</strong> O alvo fica @Compendium[pf2e.conditionitems.i3OJZU2nk64Df3xm]{Desajeitado} 2 e @Compendium[pf2e.conditionitems.e1XGnhKNSQIm5IXg]{Estupefato} 2.  <strong>Falha Crítica</strong> O alvo fica @Compendium[pf2e.conditionitems.i3OJZU2nk64Df3xm]{Desajeitado} 3, @Compendium[pf2e.conditionitems.e1XGnhKNSQIm5IXg]{Estupefato} 3, e @Compendium[pf2e.conditionitems.yblD8fOR1J8rDwEQ]{Confuso}. </p> (Tradução não oficial - Gods &amp; Magic)"
+        },
+        "rules": [],
+        "slug": "befuddle",
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "concentrate",
+            "emotion",
+            "manipulate",
+            "mental"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "occult"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Lost Omens Divine Mysteries",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": "1 creature"
+        },
+        "range": {
+          "value": "30 feet"
+        },
+        "area": null,
+        "time": {
+          "value": "2"
+        },
+        "duration": {
+          "value": "1 round",
+          "sustained": false
+        },
+        "damage": {},
+        "defense": {
+          "save": {
+            "basic": false,
+            "statistic": "will"
+          }
+        },
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "orJJCb0N6H0ga322"
+        },
+        "counteraction": false
+      },
+      "type": "spell",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.spells-srd.Item.pBevG6bSQOiyflev",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769990711808,
+        "modifiedTime": 1769990711808,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Befuddle"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "emWs19XOx1iz6aQS",
+      "folder": "T8AzYUgNIAgTJ9Iz",
+      "img": "icons/magic/death/skull-fire-white-yellow.webp",
+      "name": "Dehydrate",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>You stir the inner fire of all things within the area, driving out moisture. All creatures in the area take 1d6 persistent fire damage with a basic Fortitude save; creatures with the water or plant traits get a result one degree of success worse than they rolled. The spell ends for a creature when its persistent damage ends.</p>\n<p>A creature affected by <em>dehydrate</em> attempts an additional Fortitude save at the end of each of its turns, before rolling to recover from the persistent damage. It can forgo this additional save if it consumed water or a similar hydrating liquid within the last round (drinking typically requires a single action).</p>\n<hr />\n<p><strong>Success</strong> The creature takes no additional effect.</p>\n<p><strong>Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} until the end of its next turn.</p>\n<p><strong>Critical Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 2} until the end of its next turn.</p>\n<hr />\n<p><strong>Heightened (+2)</strong> The range increases by 10 feet, the burst increases by 5 feet, and the persistent fire damage increases by 3d6.</p>"
+        },
+        "rules": [],
+        "slug": "dehydrate",
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "concentrate",
+            "fire",
+            "manipulate"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "primal"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder A Ira dos Elementos",
+          "authors": "",
+          "license": "OGL",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": ""
+        },
+        "range": {
+          "value": "30 feet"
+        },
+        "area": {
+          "type": "burst",
+          "value": 5
+        },
+        "time": {
+          "value": "2"
+        },
+        "duration": {
+          "value": "1 minute",
+          "sustained": false
+        },
+        "damage": {
+          "KCA7zyzlqSK9qPCG": {
+            "applyMod": false,
+            "category": "persistent",
+            "formula": "1d6",
+            "kinds": [
+              "damage"
+            ],
+            "materials": [],
+            "type": "fire"
+          }
+        },
+        "defense": {
+          "save": {
+            "basic": false,
+            "statistic": "fortitude"
+          }
+        },
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "orJJCb0N6H0ga322"
+        },
+        "counteraction": false,
+        "heightening": {
+          "levels": {
+            "2": {},
+            "3": {
+              "area": {
+                "type": "burst",
+                "value": 10
+              },
+              "damage": {
+                "KCA7zyzlqSK9qPCG": {
+                  "applyMod": false,
+                  "category": "persistent",
+                  "formula": "4d6",
+                  "materials": [],
+                  "type": "fire"
+                }
+              },
+              "range": {
+                "value": "40 feet"
+              }
+            },
+            "4": {},
+            "5": {
+              "area": {
+                "type": "burst",
+                "value": 15
+              },
+              "damage": {
+                "KCA7zyzlqSK9qPCG": {
+                  "applyMod": false,
+                  "category": "persistent",
+                  "formula": "7d6",
+                  "materials": [],
+                  "type": "fire"
+                }
+              },
+              "range": {
+                "value": "50 feet"
+              }
+            },
+            "6": {},
+            "7": {
+              "area": {
+                "type": "burst",
+                "value": 20
+              },
+              "damage": {
+                "KCA7zyzlqSK9qPCG": {
+                  "applyMod": false,
+                  "category": "persistent",
+                  "formula": "10d6",
+                  "materials": [],
+                  "type": "fire"
+                }
+              },
+              "range": {
+                "value": "60 feet"
+              }
+            },
+            "8": {},
+            "9": {
+              "area": {
+                "type": "burst",
+                "value": 25
+              },
+              "damage": {
+                "KCA7zyzlqSK9qPCG": {
+                  "applyMod": false,
+                  "category": "persistent",
+                  "formula": "13d6",
+                  "materials": [],
+                  "type": "fire"
+                }
+              },
+              "range": {
+                "value": "70 feet"
+              }
+            }
+          },
+          "type": "fixed"
+        }
+      },
+      "type": "spell",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.spells-srd.Item.f9m9DayyGy3meqUX",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769990752414,
+        "modifiedTime": 1769990752414,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": false,
+          "originalName": "Dehydrate"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "O3KR3d0nYHKKHR3I",
+      "folder": "T8AzYUgNIAgTJ9Iz",
+      "img": "systems/pf2e/icons/spells/fear.webp",
+      "name": "Medo",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>You plant fear in the target; it must attempt a Will save.</p>\n<hr />\n<p><strong>Critical Success</strong> The target is unaffected.</p>\n<p><strong>Success</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}.</p>\n<p><strong>Failure</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2}.</p>\n<p><strong>Critical Failure</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 3} and @UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]{Fleeing} for 1 round.</p>\n<hr />\n<p><strong>Heightened (3rd)</strong> You can target up to five creatures.</p>"
+        },
+        "rules": [],
+        "slug": "fear",
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "concentrate",
+            "emotion",
+            "fear",
+            "manipulate",
+            "mental"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "divine",
+            "occult",
+            "primal"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": "1 creature"
+        },
+        "range": {
+          "value": "30 feet"
+        },
+        "area": null,
+        "time": {
+          "value": "2"
+        },
+        "duration": {
+          "value": "varies",
+          "sustained": false
+        },
+        "damage": {},
+        "defense": {
+          "save": {
+            "basic": false,
+            "statistic": "will"
+          }
+        },
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "orJJCb0N6H0ga322"
+        },
+        "counteraction": false,
+        "heightening": {
+          "levels": {
+            "3": {
+              "target": {
+                "value": "5 creatures"
+              }
+            }
+          },
+          "type": "fixed"
+        }
+      },
+      "type": "spell",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.spells-srd.Item.4koZzrnMXhhosn0D",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769990883953,
+        "modifiedTime": 1769990883953,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Fear"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "Yvu2WBf4bKMvITqf",
+      "folder": "T8AzYUgNIAgTJ9Iz",
+      "img": "icons/magic/death/projectile-skull-flaming-yellow.webp",
+      "name": "Schadenfreude",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p><strong>Trigger</strong> You critically fail a saving throw against a foe's effect.</p><hr /><p>You distract your enemy with their feeling of smug pleasure when you fail catastrophically. They must attempt a Will save.</p><hr /><p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature is distracted by its amusement and takes a -1 status penalty on Perception checks and Will saves for 1 round. @UUID[Compendium.pf2e.spell-effects.Item.TjGHxli0edXI6rAg]{Spell Effect: Schadenfreude (Success)}</p>\n<p><strong>Failure</strong> The creature is overcome by its amusement and is @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1} for 1 round.</p>\n<p><strong>Critical Failure</strong> The creature is lost in its amusement and is @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2} for 1 round and @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1}.</p>"
+        },
+        "rules": [],
+        "slug": "schadenfreude",
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "concentrate",
+            "emotion",
+            "mental"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "divine",
+            "occult"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Livro do Jogador 2",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": "the triggering foe"
+        },
+        "range": {
+          "value": "30 feet"
+        },
+        "area": null,
+        "time": {
+          "value": "reaction"
+        },
+        "duration": {
+          "value": "",
+          "sustained": false
+        },
+        "damage": {},
+        "defense": {
+          "save": {
+            "basic": false,
+            "statistic": "will"
+          }
+        },
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "orJJCb0N6H0ga322"
+        },
+        "counteraction": false
+      },
+      "type": "spell",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.spells-srd.Item.8E97SA9KAWCNdXfO",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769991086057,
+        "modifiedTime": 1769991086057,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Schadenfreude"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "FbekL0uGi0xNIpoz",
+      "folder": "T8AzYUgNIAgTJ9Iz",
+      "img": "systems/pf2e/icons/spells/sleep.webp",
+      "name": "Sono",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Each creature in the area becomes drowsy and might fall asleep. A creature that falls @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious} from this spell doesn't fall @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone} or release what it's holding. This spell doesn't prevent creatures from waking up due to a successful Perception check, limiting its utility in combat.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes a -1 status penalty to Perception checks for 1 round.</p>\n<p><strong>Failure</strong> The creature falls Unconscious. If it's still Unconscious after 1 minute, it wakes up automatically.</p>\n<p><strong>Critical Failure</strong> The creature falls Unconscious. If it's still Unconscious after 1 hour, it wakes up automatically.</p>\n<hr />\n<p><strong>Heightened (4th)</strong> The creatures fall Unconscious for 1 round on a failure or 1 minute on a critical failure. They fall Prone and release what they're holding, and they can't attempt Perception checks to wake up. When the duration ends, the creature is sleeping normally instead of automatically waking up.</p>"
+        },
+        "rules": [],
+        "slug": "sleep",
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "concentrate",
+            "incapacitation",
+            "manipulate",
+            "mental",
+            "sleep"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "occult"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": ""
+        },
+        "range": {
+          "value": "30 feet"
+        },
+        "area": {
+          "type": "burst",
+          "value": 5
+        },
+        "time": {
+          "value": "2"
+        },
+        "duration": {
+          "value": "",
+          "sustained": false
+        },
+        "damage": {},
+        "defense": {
+          "save": {
+            "basic": false,
+            "statistic": "will"
+          }
+        },
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "orJJCb0N6H0ga322"
+        },
+        "counteraction": false
+      },
+      "type": "spell",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.spells-srd.Item.o4lRVTwSxnOOn5vl",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769991132381,
+        "modifiedTime": 1769991132381,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Sleep"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Magias Arcana Focus",
+      "type": "spellcastingEntry",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": ""
+        },
+        "rules": [],
+        "slug": null,
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null
+        },
+        "traits": {
+          "otherTags": []
+        },
+        "publication": {
+          "title": "",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "ability": {
+          "value": ""
+        },
+        "spelldc": {
+          "value": 0,
+          "dc": 0
+        },
+        "tradition": {
+          "value": "arcane"
+        },
+        "prepared": {
+          "value": "focus"
+        },
+        "showSlotlessLevels": {
+          "value": true
+        },
+        "proficiency": {
+          "value": 1,
+          "slug": "witch"
+        },
+        "slots": {
+          "slot0": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot1": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot2": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot3": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot4": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot5": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot6": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot7": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot8": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot9": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot10": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot11": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          }
+        },
+        "autoHeightenLevel": {
+          "value": null
+        }
+      },
+      "_id": "tDw9rYJ81OrzIupI",
+      "img": "systems/pf2e/icons/default-icons/spellcastingEntry.svg",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769991207778,
+        "modifiedTime": 1769991207778,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "folder": "wnvibtD90h7CStDC",
+      "img": "icons/commodities/biological/eye-brown.webp",
+      "name": "Evil Eye",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Your patron's resentment manifests in a baleful, envious gaze. The target becomes @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} if it fails a Will save (or sickened 2 on a critical failure). This condition value can't be reduced below 1 while the spell is active and you can see the target.</p>"
+        },
+        "rules": [],
+        "slug": "evil-eye",
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "cantrip",
+            "curse",
+            "hex",
+            "manipulate",
+            "witch"
+          ],
+          "rarity": "uncommon",
+          "traditions": []
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": "1 creature"
+        },
+        "range": {
+          "value": "30 feet"
+        },
+        "area": null,
+        "time": {
+          "value": "1"
+        },
+        "duration": {
+          "value": "1 minute",
+          "sustained": true
+        },
+        "damage": {},
+        "defense": {
+          "save": {
+            "basic": false,
+            "statistic": "will"
+          }
+        },
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "tDw9rYJ81OrzIupI"
+        },
+        "counteraction": false
+      },
+      "type": "spell",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.spells-srd.Item.f45JpY7Ph2cAJGW2",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769991598467,
+        "modifiedTime": 1769991598467,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Evil Eye"
+        }
+      },
+      "_id": "ACE5JnWDDxCLe2QB",
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "r9M8jiTzPXBuhYT6",
+      "img": "icons/containers/bags/pack-leather-white-tan.webp",
+      "name": "Mochila",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Uma mochila comporta até 4 Volumes de itens. Se estiver carregando ou arrumando a mochila em vez de usando-a nas costas, o Volume dela é leve em vez de desprezível. Os primeiros 2 Volumes de itens em sua mochila não contam contra seu limite de Volume.</p>"
+        },
+        "rules": [],
+        "slug": "backpack",
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 0
+        },
+        "quantity": 1,
+        "baseItem": null,
+        "bulk": {
+          "value": 0,
+          "heldOrStowed": 0.1,
+          "capacity": 4,
+          "ignored": 2
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "sp": 1
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null
+        },
+        "containerId": null,
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "",
+            "img": "",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          }
+        },
+        "collapsed": false,
+        "stowing": true,
+        "usage": {
+          "value": "wornbackpack"
+        }
+      },
+      "type": "backpack",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.3lgwjrFEsQVKzhh7",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769992282440,
+        "modifiedTime": 1769992282440,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Backpack"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "4y30OtePbLDywbXv",
+      "img": "icons/sundries/survival/rope-wrapped-brown.webp",
+      "name": "Corda",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>10 metros de corda.</p>"
+        },
+        "rules": [],
+        "slug": "rope",
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 0
+        },
+        "quantity": 1,
+        "baseItem": null,
+        "bulk": {
+          "value": 0.1
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "sp": 5
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null
+        },
+        "containerId": "r9M8jiTzPXBuhYT6",
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "",
+            "img": "",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          }
+        },
+        "usage": {
+          "value": "held-in-two-hands"
+        },
+        "subitems": []
+      },
+      "type": "equipment",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.fyYnQf1NAx9fWFaS",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769992282440,
+        "modifiedTime": 1769992282440,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Rope"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "oMKyQuMdGRcKBMDw",
+      "img": "systems/pf2e/icons/equipment/adventuring-gear/waterskin.webp",
+      "name": "Cantil",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p><span class=\"fontstyle0\">Esteja cheio ou vazio, um cantil possui Volume leve e é capaz de conter até 1 dia de água para uma criatura Pequena ou Média.  </span></p>"
+        },
+        "rules": [],
+        "slug": "waterskin",
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 0
+        },
+        "quantity": 1,
+        "baseItem": null,
+        "bulk": {
+          "value": 0.1
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "cp": 5
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null
+        },
+        "containerId": "r9M8jiTzPXBuhYT6",
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "",
+            "img": "",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          }
+        },
+        "usage": {
+          "value": "held-in-one-hand"
+        },
+        "subitems": []
+      },
+      "type": "equipment",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.VnPh324pKwd2ZB66",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769992282440,
+        "modifiedTime": 1769992282440,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Waterskin"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "Q2DcjE2Cb9OrhtKr",
+      "img": "systems/pf2e/icons/equipment/adventuring-gear/chalk.webp",
+      "name": "Giz",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": ""
+        },
+        "rules": [],
+        "slug": "chalk",
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 0
+        },
+        "quantity": 10,
+        "baseItem": null,
+        "bulk": {
+          "value": 0
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "cp": 1
+          },
+          "per": 10
+        },
+        "equipped": {
+          "carryType": "worn"
+        },
+        "containerId": "r9M8jiTzPXBuhYT6",
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "",
+            "img": "",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          }
+        },
+        "category": "other",
+        "uses": {
+          "value": 1,
+          "max": 1,
+          "autoDestroy": true
+        },
+        "damage": null,
+        "usage": {
+          "value": "held-in-one-hand"
+        },
+        "spell": null
+      },
+      "type": "consumable",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.xShIDyydOMkGvGNb",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769992282440,
+        "modifiedTime": 1769992282440,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Chalk"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "E0opPpPr7BMTPXFm",
+      "img": "icons/commodities/stone/geode-raw-tan.webp",
+      "name": "Pederneira e Isqueiro",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p><span class=\"fontstyle0\">Pederneira e isqueiro são usados para criar fogo em situações onde você tenha tempo o suficiente para bater um no outro e gerar uma faísca — algo demorado e pouco prático para realizar durante um encontro. Mesmo em condições ideais, usar pederneira e isqueiro para acender uma chama requer o uso de pelo menos 3 ações, e frequentemente mais ações que isso. </span></p>"
+        },
+        "rules": [],
+        "slug": "flint-and-steel",
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 0
+        },
+        "quantity": 1,
+        "baseItem": null,
+        "bulk": {
+          "value": 0
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "cp": 5
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null
+        },
+        "containerId": "r9M8jiTzPXBuhYT6",
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "",
+            "img": "",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          }
+        },
+        "usage": {
+          "value": "held-in-two-hands"
+        },
+        "subitems": []
+      },
+      "type": "equipment",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.UlIxxLm71UdRgCFE",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769992282440,
+        "modifiedTime": 1769992282440,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Flint and Steel"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "2zJhkpHG8sBujS8C",
+      "img": "systems/pf2e/icons/equipment/adventuring-gear/rations.webp",
+      "name": "Rações",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": ""
+        },
+        "rules": [],
+        "slug": "rations",
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 0
+        },
+        "quantity": 2,
+        "baseItem": null,
+        "bulk": {
+          "value": 0.1
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "sp": 4
+          },
+          "per": 1
+        },
+        "equipped": {
+          "carryType": "worn"
+        },
+        "containerId": "r9M8jiTzPXBuhYT6",
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "",
+            "img": "",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          }
+        },
+        "category": "other",
+        "uses": {
+          "value": 7,
+          "max": 7,
+          "autoDestroy": true
+        },
+        "damage": null,
+        "usage": {
+          "value": "held-in-one-hand"
+        },
+        "spell": null
+      },
+      "type": "consumable",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.L9ZV076913otGtiB",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769992282440,
+        "modifiedTime": 1769992282440,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Rations"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "9tqkRmDEWilgDKE0",
+      "img": "icons/sundries/lights/torch-brown.webp",
+      "name": "Tocha",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p><span class=\"fontstyle0\">Uma tocha emana luz brilhante em um raio de 6 metros (e luz fraca por mais 6 metros). Ela pode ser usada como uma arma improvisada que causa 1d4 de dano contundente mais 1 de dano de fogo.  </span></p>"
+        },
+        "rules": [
+          {
+            "key": "TokenLight",
+            "predicate": [
+              "lit-torch"
+            ],
+            "value": {
+              "alpha": 0.3,
+              "animation": {
+                "intensity": 1,
+                "speed": 2,
+                "type": "flame"
+              },
+              "attenuation": 0.4,
+              "bright": 20,
+              "color": "#ffae3d",
+              "dim": 40,
+              "shadows": 0.2
+            }
+          },
+          {
+            "category": "simple",
+            "damage": {
+              "base": {
+                "damageType": "bludgeoning",
+                "dice": 1,
+                "die": "d4"
+              }
+            },
+            "key": "Strike",
+            "otherTags": [
+              "improvised"
+            ],
+            "predicate": [
+              {
+                "not": "lit-torch"
+              }
+            ]
+          },
+          {
+            "category": "simple",
+            "damage": {
+              "base": {
+                "damageType": "bludgeoning",
+                "dice": 1,
+                "die": "d4"
+              }
+            },
+            "img": "icons/sundries/lights/torch-brown-lit.webp",
+            "key": "Strike",
+            "otherTags": [
+              "improvised"
+            ],
+            "predicate": [
+              "lit-torch"
+            ]
+          },
+          {
+            "damageType": "fire",
+            "key": "FlatModifier",
+            "predicate": [
+              "lit-torch"
+            ],
+            "selector": "{item|_id}-damage",
+            "value": 1
+          },
+          {
+            "key": "RollOption",
+            "label": "PF2E.SpecificRule.LitTorch",
+            "option": "lit-torch",
+            "toggleable": true
+          },
+          {
+            "key": "TokenEffectIcon",
+            "predicate": [
+              "lit-torch"
+            ],
+            "value": "icons/sundries/lights/torch-brown-lit.webp"
+          }
+        ],
+        "slug": "torch",
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 0
+        },
+        "quantity": 5,
+        "baseItem": null,
+        "bulk": {
+          "value": 0.1
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "cp": 1
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null
+        },
+        "containerId": "r9M8jiTzPXBuhYT6",
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "",
+            "img": "",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          }
+        },
+        "usage": {
+          "value": "held-in-one-hand"
+        },
+        "subitems": []
+      },
+      "type": "equipment",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.8Jdw4yAzWYylGePS",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769992282440,
+        "modifiedTime": 1769992282440,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Torch"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "SGNM85Z40Zil8aKv",
+      "img": "icons/containers/ammunition/quiver-simple-brown.webp",
+      "name": "Esteira de Dormir",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "Uma cama enrolada"
+        },
+        "rules": [],
+        "slug": "bedroll",
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 0
+        },
+        "quantity": 1,
+        "baseItem": null,
+        "bulk": {
+          "value": 0.1
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "cp": 2
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null
+        },
+        "containerId": "r9M8jiTzPXBuhYT6",
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "",
+            "img": "",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          }
+        },
+        "usage": {
+          "value": "other"
+        },
+        "subitems": []
+      },
+      "type": "equipment",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.fagzYdmfYyMQ6J77",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769992282440,
+        "modifiedTime": 1769992282440,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Bedroll"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "bSDo7ODuZWZ5r3P9",
+      "img": "icons/sundries/survival/soap.webp",
+      "name": "Sabão",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Uma barra de sabão.</p>"
+        },
+        "rules": [],
+        "slug": "soap",
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 0
+        },
+        "quantity": 1,
+        "baseItem": null,
+        "bulk": {
+          "value": 0
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "cp": 2
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null
+        },
+        "containerId": "r9M8jiTzPXBuhYT6",
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "",
+            "img": "",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          }
+        },
+        "usage": {
+          "value": "held-in-one-hand"
+        },
+        "subitems": []
+      },
+      "type": "equipment",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.81aHsD27HFGnq1Nt",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769992282440,
+        "modifiedTime": 1769992282440,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Soap"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "img": "icons/weapons/staves/staff-simple.webp",
+      "name": "Cajado",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p> Esta longa peça de madeira pode auxiliar no caminhar e desferir golpes poderosos.</p>"
+        },
+        "rules": [],
+        "slug": "staff",
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "monk",
+            "two-hand-d8"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 0
+        },
+        "quantity": 1,
+        "baseItem": "staff",
+        "bulk": {
+          "value": 1
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {}
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null,
+          "handsHeld": 0
+        },
+        "containerId": null,
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "",
+            "img": "",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          }
+        },
+        "usage": {
+          "value": "held-in-one-hand"
+        },
+        "category": "simple",
+        "group": "club",
+        "bonus": {
+          "value": 0
+        },
+        "damage": {
+          "dice": 1,
+          "die": "d4",
+          "damageType": "bludgeoning",
+          "persistent": null
+        },
+        "splashDamage": {
+          "value": 0
+        },
+        "range": null,
+        "expend": null,
+        "ammo": null,
+        "reload": {
+          "value": null
+        },
+        "grade": null,
+        "runes": {
+          "potency": 0,
+          "striking": 0,
+          "property": []
+        },
+        "specific": null,
+        "subitems": [],
+        "bonusDamage": {
+          "value": 0
+        }
+      },
+      "type": "weapon",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.FVjTuBCIefAgloUU",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769992387050,
+        "modifiedTime": 1769992387050,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Staff"
+        }
+      },
+      "_id": "rwfB0EM7ZRkKUXy6",
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "img": "systems/pf2e/icons/equipment/consumables/other-consumables/unholy-water.webp",
+      "name": "Água Profana",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p><span>A malícia de uma divindade maligna habita dentro deste frasco de água. Você ativa um frasco de <em>água profana</em> ao arremessá-lo como um Golpe. Ela é uma arma de arremesso simples com incremento de distância de 6 metros. Diferente de uma bomba alquímica, a água profana não adiciona o traço manuseio ao ataque feito com ela.  </span></p> <p><span><em>Água profana</em> causa 1d6 de dano maligno e 1 de dano maligno de respingo. Ela só causa dano a celestiais e criaturas que possuam fraqueza contra dano maligno.   </span></p> <p><span><strong>Ativação</strong> <span class=\"pf2-icon\">A</span> Golpear </span></p>"
+        },
+        "rules": [
+          {
+            "key": "Note",
+            "selector": "{item|id}-damage",
+            "text": "PF2E.SpecificRule.Equipment.UnholyWater.Note",
+            "title": "{item|name}"
+          }
+        ],
+        "slug": "unholy-water",
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "consumable",
+            "divine",
+            "splash",
+            "thrown",
+            "unholy"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Pathfinder Livro do Mestre",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "quantity": 1,
+        "baseItem": null,
+        "bulk": {
+          "value": 0.1
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "gp": 3
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null,
+          "handsHeld": 0
+        },
+        "containerId": null,
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "",
+            "img": "",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          }
+        },
+        "usage": {
+          "value": "held-in-one-hand",
+          "canBeAmmo": false
+        },
+        "category": "simple",
+        "group": null,
+        "bonus": {
+          "value": 0
+        },
+        "damage": {
+          "dice": 1,
+          "die": "d6",
+          "damageType": "spirit",
+          "persistent": null
+        },
+        "splashDamage": {
+          "value": 1
+        },
+        "range": 20,
+        "expend": null,
+        "ammo": null,
+        "reload": {
+          "value": "-"
+        },
+        "grade": null,
+        "runes": {
+          "potency": 0,
+          "striking": 0,
+          "property": []
+        },
+        "specific": null,
+        "subitems": [],
+        "bonusDamage": {
+          "value": 0
+        }
+      },
+      "type": "weapon",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.EGhUorZhB7nV73Ev",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769992566425,
+        "modifiedTime": 1769992566425,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Unholy Water"
+        }
+      },
+      "_id": "WSYk6Iti8bz7EEoa",
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "img": "systems/pf2e/icons/equipment/treasure/currency/gold-pieces.webp",
+      "name": "Peças de Ouro",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 1
+        },
+        "category": "coin",
+        "containerId": null,
+        "description": {
+          "value": "",
+          "gm": ""
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 1
+          },
+          "per": 1
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core",
+          "authors": ""
+        },
+        "quantity": 58,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": [],
+          "otherTags": []
+        },
+        "slug": "gold-pieces",
+        "_migration": {
+          "version": 0.953,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": null
+        },
+        "temporary": false
+      },
+      "type": "treasure",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.B6B7tBWJSqOBz5zz",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769992580277,
+        "modifiedTime": 1769993460432,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Gold Pieces"
+        }
+      },
+      "_id": "oa3bbjnbJNnXl78U",
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "img": "systems/pf2e/icons/equipment/held-items/doll.webp",
+      "name": "Doll",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Dolls are found throughout Golarion in a wide variety of forms. Among the most common are miniature painted figurines, plush animals crafted from fur and stuffed with cotton, porcelain dolls with fine clothing and silky hair, fabric hand puppets, and elaborate marionettes.</p>\n<hr />\n<p>This price is for an average doll of any type.</p>"
+        },
+        "rules": [],
+        "slug": "doll",
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Pathfinder Lost Omens The Grand Bazaar",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "level": {
+          "value": 0
+        },
+        "quantity": 1,
+        "baseItem": null,
+        "bulk": {
+          "value": 0.1
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "sp": 1
+          }
+        },
+        "equipped": {
+          "carryType": "stowed",
+          "invested": null
+        },
+        "containerId": "r9M8jiTzPXBuhYT6",
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "",
+            "img": "",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          }
+        },
+        "usage": {
+          "value": "held-in-one-hand"
+        },
+        "subitems": []
+      },
+      "type": "equipment",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.ZPFDfWPmWLPUJeW1",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769992639901,
+        "modifiedTime": 1769992639901,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": false,
+          "originalName": "Doll"
+        }
+      },
+      "_id": "f6vlwePeGSIOAGw8",
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "img": "icons/consumables/potions/bottle-round-corked-orante-red.webp",
+      "name": "Poção de Cura (Mínima)",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Uma poção de cura é um frasco de líquido vermelho-rubi que causa uma sensação de formigamento enquanto cura rapidamente os ferimentos de quem a bebe. Quando bebe uma poção de cura, você recupera a quantidade listada de Pontos de Vida.</p> <p>A poção restaura 1d8 Pontos de Vida.</p>"
+        },
+        "rules": [],
+        "slug": "healing-potion-minor",
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "consumable",
+            "healing",
+            "magical",
+            "potion",
+            "vitality"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Pathfinder Livro do Mestre",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "quantity": 10,
+        "baseItem": null,
+        "bulk": {
+          "value": 0.1
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "gp": 4
+          }
+        },
+        "equipped": {
+          "carryType": "worn"
+        },
+        "containerId": null,
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "",
+            "img": "",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          }
+        },
+        "category": "potion",
+        "uses": {
+          "value": 1,
+          "max": 1,
+          "autoDestroy": true
+        },
+        "damage": {
+          "formula": "1d8",
+          "kind": "healing",
+          "type": "vitality"
+        },
+        "usage": {
+          "value": "held-in-one-hand"
+        },
+        "spell": null
+      },
+      "type": "consumable",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.2RuepCemJhrpKKao",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769992701888,
+        "modifiedTime": 1769992706853,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Healing Potion (Minor)"
+        }
+      },
+      "_id": "MVqDzHk2gv1PWTpH",
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "img": "systems/pf2e/icons/equipment/worn-items/other-worn-items/blast-boots.webp",
+      "name": "Blast Boots (Lesser)",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p><strong>Activate</strong> <span class=\"action-glyph\">1</span> (manipulate)</p><hr /><p>These sets of rockets come in pairs and strap onto existing footwear (or a creature's feet). Inserting them and aligning them properly takes 1 minute. When you Activate the blast boots, you can @UUID[Compendium.pf2e.actionspf2e.Item.2HJ4yuEFY1Cast4h]{High Jump} or @UUID[Compendium.pf2e.actionspf2e.Item.JUvAvruz7yRQXfz2]{Long Jump}, without the need to Stride first.</p>"
+        },
+        "rules": [],
+        "slug": "blast-boots-lesser",
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "consumable",
+            "gadget"
+          ],
+          "rarity": "uncommon"
+        },
+        "publication": {
+          "title": "Pathfinder Guns & Gears",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "quantity": 5,
+        "baseItem": null,
+        "bulk": {
+          "value": 0.1
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "gp": 3
+          }
+        },
+        "equipped": {
+          "carryType": "worn"
+        },
+        "containerId": null,
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "",
+            "img": "",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          }
+        },
+        "category": "gadget",
+        "uses": {
+          "value": 1,
+          "max": 1,
+          "autoDestroy": true
+        },
+        "damage": null,
+        "usage": {
+          "value": "wornshoes"
+        },
+        "spell": null
+      },
+      "type": "consumable",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.nybZVDfQWMhwvL2C",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769992941324,
+        "modifiedTime": 1769992945229,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": false,
+          "originalName": "Blast Boots (Lesser)"
+        }
+      },
+      "_id": "oGY8j0rtmc1tj1r5",
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "img": "icons/equipment/chest/breastplate-purple.webp",
+      "name": "Roupas (Finas)",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Roupas finas, apropriadas para um nobre ou rei, são feitas de tecidos caros, metais preciosos e padrões intricados. </p> "
+        },
+        "rules": [],
+        "slug": "clothing-fine",
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 0
+        },
+        "quantity": 1,
+        "baseItem": null,
+        "bulk": {
+          "value": 0.1
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "gp": 2
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null
+        },
+        "containerId": null,
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "",
+            "img": "",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          }
+        },
+        "usage": {
+          "value": "worn"
+        },
+        "subitems": []
+      },
+      "type": "equipment",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.jJZbdMHMdh8UL2j8",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769993127211,
+        "modifiedTime": 1769993127211,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Clothing (Fine)"
+        }
+      },
+      "_id": "swjwrl44rURIHMuP",
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "img": "icons/equipment/finger/ring-band-skull-purple.webp",
+      "name": "Poison Ring",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>This ring contains a compartment beneath the bezel intended to hold a small amount of poison. You can determine the ring's true purpose with a successful @Check[perception|dc:20] check. Noticing the compartment while the ring is being worn is more difficult and typically requires a successful Perception check against the Stealth DC of the person wearing the ring. You place poison within the ring using the same method for applying poison to a weapon. You can release the ring's poison or consume it using an Interact action if you have a free hand. The ring's compartment is large enough to hold an effective amount of most poisons, but it's too small to hold a significant amount of other liquids, including potions and magical oils.</p>"
+        },
+        "rules": [],
+        "slug": "poison-ring",
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Pathfinder Lost Omens Firebrands",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "level": {
+          "value": 1
+        },
+        "quantity": 1,
+        "baseItem": null,
+        "bulk": {
+          "value": 0
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "gp": 10
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null
+        },
+        "containerId": null,
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "",
+            "img": "",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          }
+        },
+        "usage": {
+          "value": "worn"
+        },
+        "subitems": []
+      },
+      "type": "equipment",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.SBQRbWKjGNkNJeG5",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769993267840,
+        "modifiedTime": 1769993267840,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": false,
+          "originalName": "Poison Ring"
+        }
+      },
+      "_id": "S5b4D76SCWOhGZGS",
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "img": "systems/pf2e/icons/equipment/alchemical-items/alchemical-elixirs/antidote.webp",
+      "name": "Antídoto (Menor)",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p><strong>Activate</strong> <span class=\"action-glyph\">A</span> (manipulate)</p><hr /><p>An antidote protects you against toxins. Upon drinking an antidote, you gain a +2 item bonus to Fortitude saving throws against poisons for 6 hours.</p>\n<p>@UUID[Compendium.pf2e.equipment-effects.Item.TjBxxlTvb6tJP1jS]{Effect: Antidote}</p>"
+        },
+        "rules": [],
+        "slug": "antidote-lesser",
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "alchemical",
+            "consumable",
+            "elixir",
+            "healing"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Pathfinder Livro do Mestre",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "quantity": 5,
+        "baseItem": null,
+        "bulk": {
+          "value": 0.1
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "gp": 3
+          }
+        },
+        "equipped": {
+          "carryType": "worn"
+        },
+        "containerId": null,
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "",
+            "img": "",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          }
+        },
+        "category": "elixir",
+        "uses": {
+          "value": 1,
+          "max": 1,
+          "autoDestroy": true
+        },
+        "damage": null,
+        "usage": {
+          "value": "held-in-one-hand"
+        },
+        "spell": null
+      },
+      "type": "consumable",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.ktjFOp3U0wQD9t0Z",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769993406180,
+        "modifiedTime": 1769993410401,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Antidote (Lesser)"
+        }
+      },
+      "_id": "T3eFbkr5iZ9bPUmR",
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "img": "systems/pf2e/icons/equipment/alchemical-items/alchemical-poisons/giant-centipede-venom.webp",
+      "name": "Veneno de Centopeia Gigante",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p><span>Veneno de centopeia gigante causa rigidez muscular severa.  </span></p> <p><span><strong>Salvamento</strong> Fortitude CD 17; <strong>Duração Máxima</strong> 6 rodadas; <strong>Estágio 1</strong> 1d6 de dano de veneno e desprevenido (1 rodada); <strong>Estágio 2</strong> 1d8 de dano de veneno e desprevenido (1 rodada); <strong>Estágio 3</strong> 1d12 de dano de veneno, desajeitado 1 e desprevenido (1 rodada)  </span></p> <p><span><strong>Ativação</strong> <span class=\"pf2-icon\">D</span> Actions\"&gt; Interagir </span></p>"
+        },
+        "rules": [],
+        "slug": "giant-centipede-venom",
+        "_migration": {
+          "version": 0.953,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "alchemical",
+            "consumable",
+            "injury",
+            "poison"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Pathfinder Livro do Mestre",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "quantity": 2,
+        "baseItem": null,
+        "bulk": {
+          "value": 0.1
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "gp": 4
+          }
+        },
+        "equipped": {
+          "carryType": "worn"
+        },
+        "containerId": null,
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "",
+            "img": "",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          }
+        },
+        "category": "poison",
+        "uses": {
+          "value": 1,
+          "max": 1,
+          "autoDestroy": true
+        },
+        "damage": null,
+        "usage": {
+          "value": "held-in-two-hands"
+        },
+        "spell": null
+      },
+      "type": "consumable",
+      "_stats": {
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.txmX5ghhPS72GKXy",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "pf2e",
+        "systemVersion": "7.8.0",
+        "createdTime": 1769993451177,
+        "modifiedTime": 1769993453779,
+        "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Giant Centipede Venom"
+        }
+      },
+      "_id": "HMBjljsBu7pjY0FB",
+      "ownership": {
+        "default": 0
+      }
+    }
+  ],
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": {
+      "worldId": "tio-louco",
+      "uuid": "Actor.ABGuq5ziVvllwQGu",
+      "coreVersion": "13.350",
+      "systemId": "pf2e",
+      "systemVersion": "7.8.0"
+    },
+    "coreVersion": "13.350",
+    "systemId": "pf2e",
+    "systemVersion": "7.8.0",
+    "createdTime": 1769987225549,
+    "modifiedTime": 1769988736511,
+    "lastModifiedBy": "Oi6djKjPrEiwZWqI"
+  },
+  "ownership": {
+    "default": 1
+  }
+}
