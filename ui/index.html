@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PF2E Ficha - Exportador</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div>
+        <h1>Exportador de Ficha PF2E</h1>
+        <p>Escolha o JSON e selecione as seções da ficha.</p>
+      </div>
+      <div class="actions">
+        <button id="enableAll" class="btn">Ativar todas</button>
+        <button id="preview" class="btn">Gerar previa</button>
+        <button id="generate" class="btn primary">Gerar ficha</button>
+      </div>
+    </header>
+
+    <section class="panel">
+      <h2>Arquivos JSON</h2>
+      <div class="json-grid">
+        <div id="jsonList" class="json-list"></div>
+        <div class="dropzone" id="dropzone">
+          <input type="file" id="fileInput" accept=".json" />
+          <p>Arraste um JSON aqui ou clique para escolher</p>
+        </div>
+      </div>
+      <div class="selected">
+        Selecionado: <span id="selectedJson">nenhum</span>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Seções</h2>
+      <div id="sections" class="sections"></div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
