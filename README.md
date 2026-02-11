@@ -52,6 +52,10 @@ python conversor_v2.py --web-ui
 A interface web permite hierarquia de secoes, botao "Ativar todas", selecao de JSONs disponiveis e upload via drag-and-drop. As escolhas ficam salvas em `output/config.json`.
 
 Na Web UI, o botao "Gerar previa" cria um arquivo em `temp/` no formato `preview_<json>_YYYY-MM-DD_HH-MM-SS_temp.html` e abre em uma nova aba com um botao flutuante de "Gerar ficha".
+A ordem das secoes pode ser ajustada na UI (botoes ↑/↓) e fica persistida no config.
+
+### Tradução
+A funcionalidade de tradução foi removida por enquanto.
 
 ### v1 (FPDF)
 1. Exporte o JSON do personagem no Foundry VTT.

@@ -9,9 +9,8 @@ import subprocess
 import argparse
 from dataclasses import dataclass
 from typing import Dict
-from http.server import HTTPServer, BaseHTTPRequestHandler
+from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
 from urllib.parse import urlparse
-import threading
 import mimetypes
 from datetime import datetime
 from pathlib import Path
@@ -158,16 +157,18 @@ class CharacterAnalyzer:
         attacks = {}
 
         melee_proficiency = 2 if level >= 5 else 1
+        weapon_proficiencies = {}
         for item in self.data.get("items", []):
             if item.get("type") == "class":
                 class_attacks = item.get("system", {}).get("attacks", {})
                 if isinstance(class_attacks, dict):
-                    ranks = [
-                        class_attacks.get("simple", 0),
-                        class_attacks.get("martial", 0),
-                        class_attacks.get("advanced", 0),
-                        class_attacks.get("unarmed", 0),
-                    ]
+                    weapon_proficiencies = {
+                        "simple": class_attacks.get("simple", 0),
+                        "martial": class_attacks.get("martial", 0),
+                        "advanced": class_attacks.get("advanced", 0),
+                        "unarmed": class_attacks.get("unarmed", 0),
+                    }
+                    ranks = list(weapon_proficiencies.values())
                     max_rank = max([r for r in ranks if isinstance(r, int)], default=0)
                     if max_rank:
                         melee_proficiency = max_rank
@@ -185,6 +186,7 @@ class CharacterAnalyzer:
         }
 
         attacks["melee"]["total"] = attacks["melee"]["prof_bonus"] + max(str_mod, dex_mod)
+        attacks["weapon_proficiencies"] = weapon_proficiencies
 
         self.calculated_values["attacks"] = attacks
         return attacks
@@ -214,24 +216,43 @@ class CharacterAnalyzer:
             "thievery": "dex",
         }
 
-        for skill, data in (skills_data or {}).items():
-            if isinstance(data, dict) and "rank" in data:
-                rank = data["rank"]
-                ability = data.get("ability") or skill_abilities.get(skill, "dex")
-                if "lore" in skill or data.get("label"):
-                    ability = data.get("ability") or "int"
+        proficiency_ranks = {0: 0, 1: level, 2: level + 4, 3: level + 8, 4: level + 12}
+
+        for skill, ability_default in skill_abilities.items():
+            data = skills_data.get(skill, {}) if isinstance(skills_data, dict) else {}
+            if not isinstance(data, dict):
+                data = {}
+            rank = data.get("rank", 0)
+            ability = data.get("ability") or ability_default
+            ability_mod = ability_mods.get(ability, 0)
+            prof_bonus = proficiency_ranks.get(rank, 0)
+            skills[skill] = {
+                "rank": rank,
+                "ability": ability,
+                "ability_mod": ability_mod,
+                "prof_bonus": prof_bonus,
+                "total": prof_bonus + ability_mod,
+                "label": data.get("label", ""),
+            }
+
+        if isinstance(skills_data, dict):
+            for skill, data in skills_data.items():
+                if skill in skills:
+                    continue
+                if not isinstance(data, dict):
+                    continue
+                rank = data.get("rank", 0)
+                label = data.get("label", "")
+                ability = data.get("ability") or ("int" if "lore" in skill or label else "dex")
                 ability_mod = ability_mods.get(ability, 0)
-
-                proficiency_ranks = {0: 0, 1: level, 2: level + 4, 3: level + 8, 4: level + 12}
                 prof_bonus = proficiency_ranks.get(rank, 0)
-
                 skills[skill] = {
                     "rank": rank,
                     "ability": ability,
                     "ability_mod": ability_mod,
                     "prof_bonus": prof_bonus,
                     "total": prof_bonus + ability_mod,
-                    "label": data.get("label", ""),
+                    "label": label,
                 }
 
         self.calculated_values["skills"] = skills
@@ -337,13 +358,35 @@ def clean_text(text):
     if text is None:
         return ""
     text = str(text)
+    text = re.sub(r"@Compendium\[[^\]]+\]\{([^}]+)\}", r"\1", text)
+    text = re.sub(r"@Compendium\[[^\]]+\]", "", text)
+    text = re.sub(r"@UUID\[[^\]]+\]\{([^}]+)\}", r"\1", text)
+    text = re.sub(r"@UUID\[[^\]]+\]", "", text)
     text = re.sub(r"\[\[.*?\]\]", "", text)
     text = re.sub(r"\[.*?\]", "", text)
     return text.strip()
 
 
 def h(text):
-    return html.escape(clean_text(text))
+    cleaned = clean_text(text)
+    return html.escape(cleaned)
+
+
+def clean_description(text):
+    if text is None:
+        return ""
+    text = str(text)
+    text = re.sub(r"@Compendium\[[^\]]+\]\{([^}]+)\}", r"\1", text)
+    text = re.sub(r"@Compendium\[[^\]]+\]", "", text)
+    text = re.sub(r"@UUID\[[^\]]+\]\{([^}]+)\}", r"\1", text)
+    text = re.sub(r"@UUID\[[^\]]+\]", "", text)
+    text = re.sub(r"<hr\s*/?>", "\n", text, flags=re.IGNORECASE)
+    text = re.sub(r"</p\s*>", "\n", text, flags=re.IGNORECASE)
+    text = re.sub(r"<br\s*/?>", "\n", text, flags=re.IGNORECASE)
+    text = re.sub(r"<[^>]+>", "", text)
+    text = html.unescape(text)
+    text = re.sub(r"\n{3,}", "\n\n", text)
+    return text.strip()
 
 
 def render_table(headers, rows):
@@ -397,6 +440,17 @@ def extract_value(value):
     if isinstance(value, dict) and "value" in value:
         return value["value"]
     return value
+
+
+def get_nested_value(obj, *keys, default=""):
+    current = obj
+    for key in keys:
+        if not isinstance(current, dict):
+            return default
+        current = current.get(key)
+    if current is None:
+        return default
+    return current
 
 
 def format_resource_value(resource):
@@ -494,9 +548,12 @@ def generate_html(analyzer, output_title, sections: SectionFlags):
         "survival": "Sobrevivencia",
         "thievery": "Ladinagem",
     }
-    rank_names = {0: "NT", 1: "T", 2: "E", 3: "M", 4: "L"}
     skills_rows = []
-    for skill_key, skill_info in skills.items():
+    ordered_skill_keys = list(skill_names_pt.keys()) + [k for k in skills.keys() if k not in skill_names_pt]
+    for skill_key in ordered_skill_keys:
+        skill_info = skills.get(skill_key)
+        if not skill_info:
+            continue
         label = skill_info.get("label") if isinstance(skill_info, dict) else ""
         if label:
             skill_name = label
@@ -504,13 +561,9 @@ def generate_html(analyzer, output_title, sections: SectionFlags):
             skill_name = f"Lore: {skill_key.replace('lore', '').strip().title()}".strip()
         else:
             skill_name = skill_names_pt.get(skill_key, skill_key.upper())
-        rank = rank_names.get(skill_info["rank"], skill_info["rank"])
         skills_rows.append([
             skill_name,
-            rank,
-            f"{skill_info['ability_mod']:+}",
-            f"+{skill_info['prof_bonus']}",
-            f"+{skill_info['total']}",
+            f"{skill_info['total']:+}",
         ])
 
     weapons = analyzer.get_items_by_type("weapon")
@@ -523,7 +576,6 @@ def generate_html(analyzer, output_title, sections: SectionFlags):
     actions = analyzer.get_items_by_type("action")
     spell_entries = analyzer.get_items_by_type("spellcastingEntry")
     spells = analyzer.get_items_by_type("spell")
-
     ancestries = analyzer.get_items_by_type("ancestry")
     heritages = analyzer.get_items_by_type("heritage")
     classes = analyzer.get_items_by_type("class")
@@ -640,6 +692,57 @@ def generate_html(analyzer, output_title, sections: SectionFlags):
             parts.append(f"tracos: {traits_text}")
         return " — ".join(parts) if len(parts) > 1 else item_name
 
+    def build_weapon_attack_rows():
+        if not weapons:
+            return []
+        level = info["level"]
+        proficiency_ranks = {0: 0, 1: level, 2: level + 4, 3: level + 8, 4: level + 12}
+        weapon_profs = attacks.get("weapon_proficiencies", {})
+        rows = []
+        for item in weapons:
+            item_name = clean_text(item.get("name", ""))
+            system_item = item.get("system", {})
+            traits = system_item.get("traits", {}).get("value", []) or []
+            traits = [clean_text(t) for t in traits if clean_text(t)]
+            is_thrown = "thrown" in traits
+            is_finesse = "finesse" in traits
+
+            range_value = system_item.get("range", None)
+            if isinstance(range_value, dict):
+                range_value = range_value.get("value", "")
+            is_ranged = bool(range_value)
+
+            if is_ranged and not is_thrown:
+                ability_mod = ability_mods.get("dex", 0)
+            elif is_finesse:
+                ability_mod = max(ability_mods.get("str", 0), ability_mods.get("dex", 0))
+            else:
+                ability_mod = ability_mods.get("str", 0)
+
+            category = system_item.get("category", "")
+            rank = weapon_profs.get(category, attacks["melee"]["proficiency"])
+            prof_bonus = proficiency_ranks.get(rank, 0)
+
+            bonus = system_item.get("bonus", {}).get("value", 0) or 0
+            potency = system_item.get("runes", {}).get("potency", 0) or 0
+            attack_total = prof_bonus + ability_mod + bonus + potency
+
+            damage = system_item.get("damage", {})
+            dice = damage.get("dice", 0)
+            die = damage.get("die", "")
+            damage_type = clean_text(damage.get("damageType", ""))
+            striking = system_item.get("runes", {}).get("striking", 0) or 0
+            damage_text = "-"
+            if dice and die:
+                die_text = str(die) if str(die).startswith("d") else f"d{die}"
+                total_dice = dice * (1 + striking)
+                damage_text = f"{total_dice}{die_text}"
+                if damage_type:
+                    damage_text = f"{damage_text} {damage_type}"
+
+            rows.append([item_name, f"{attack_total:+}", damage_text])
+        return rows
+
     def format_armor(item, item_name):
         ac_bonus = item.get("system", {}).get("acBonus", 0)
         dex_cap = item.get("system", {}).get("dexCap", "")
@@ -689,23 +792,57 @@ def generate_html(analyzer, output_title, sections: SectionFlags):
             blocks.append(block)
         return "".join(blocks)
 
-    def format_spell(item):
-        name = clean_text(item.get("name", ""))
-        level = item.get("system", {}).get("level", {}).get("value", "")
-        time = item.get("system", {}).get("time", {}).get("value", "")
-        rng = item.get("system", {}).get("range", {}).get("value", "")
-        traits = item.get("system", {}).get("traits", {}).get("value", [])
+    def format_spell_details(item):
+        system_item = item.get("system")
+        if not isinstance(system_item, dict):
+            system_item = {}
+        level = get_nested_value(system_item, "level", "value", default="")
+        time = get_nested_value(system_item, "time", "value", default="")
+        rng = get_nested_value(system_item, "range", "value", default="")
+        duration = get_nested_value(system_item, "duration", "value", default="")
+        target = get_nested_value(system_item, "target", "value", default="")
+        area = get_nested_value(system_item, "area", "value", default="")
+        requirements = system_item.get("requirements") or ""
+        defense = system_item.get("defense") or {}
+        defense_text = ""
+        if isinstance(defense, dict):
+            save = defense.get("save", {})
+            if isinstance(save, dict) and save.get("statistic"):
+                save_name = save.get("statistic", "").title()
+                if save.get("basic"):
+                    defense_text = f"Teste: {save_name} (basico)"
+                else:
+                    defense_text = f"Teste: {save_name}"
+        traits = get_nested_value(system_item, "traits", "value", default=[])
         trait_text = ", ".join(clean_text(t) for t in traits if clean_text(t))
-        parts = [name]
+        parts = []
         if level != "":
             parts.append(f"nivel {level}")
         if time:
             parts.append(f"acao {time}")
         if rng:
             parts.append(f"alcance {rng}")
+        if target:
+            parts.append(f"alvo {target}")
+        if area:
+            parts.append(f"area {area}")
+        if duration:
+            parts.append(f"duracao {duration}")
+        if requirements:
+            parts.append(f"requisitos {requirements}")
+        if defense_text:
+            parts.append(defense_text)
         if trait_text:
             parts.append(f"tracos: {trait_text}")
         return " — ".join(parts)
+
+    def format_spell_description(item):
+        system_item = item.get("system")
+        if not isinstance(system_item, dict):
+            system_item = {}
+        description = get_nested_value(system_item, "description", "value", default="")
+        cleaned = clean_description(description)
+        return cleaned
 
     def render_spells_by_entry():
         if not spell_entries:
@@ -719,15 +856,29 @@ def generate_html(analyzer, output_title, sections: SectionFlags):
         for entry in spell_entries:
             entry_id = entry.get("_id")
             entry_name = clean_text(entry.get("name", "Entrada de Magias"))
-            tradition = entry.get("system", {}).get("tradition", {}).get("value", "")
-            prepared = entry.get("system", {}).get("prepared", {}).get("value", "")
+            system_entry = entry.get("system")
+            if not isinstance(system_entry, dict):
+                system_entry = {}
+            tradition = get_nested_value(system_entry, "tradition", "value", default="")
+            prepared = get_nested_value(system_entry, "prepared", "value", default="")
             header = entry_name
             if tradition:
                 header += f" ({tradition})"
             if prepared:
                 header += f" — {prepared}"
             entry_spells = spells_by_entry.get(entry_id, [])
-            lis = "".join(f"<li>{h(format_spell(spell))}</li>" for spell in entry_spells)
+            lis = ""
+            for spell in entry_spells:
+                name = clean_text(spell.get("name", ""))
+                details = format_spell_details(spell)
+                description = format_spell_description(spell)
+                description_html = html.escape(description).replace("\n", "<br>") if description else ""
+                lis += f"<li><div class='spell-name'>{h(name)}</div>"
+                if details:
+                    lis += f"<div class='spell-meta'>{h(details)}</div>"
+                if description_html:
+                    lis += f"<div class='spell-desc'>{description_html}</div>"
+                lis += "</li>"
             blocks.append(f"<div class='card'><h3>{h(header)}</h3><ul>{lis}</ul></div>")
         return "".join(blocks)
 
@@ -808,11 +959,39 @@ def generate_html(analyzer, output_title, sections: SectionFlags):
     if sections.summary_skills:
         summary_cards += f"""
     <div class="card" style="margin-top: 12px;">
-      <h3>Pericias</h3>
-      {render_table(["Pericia", "Rank", "Mod", "Prof", "Total"], skills_rows)}
+      <h3>Pericias (Totais)</h3>
+      {render_table(["Pericia", "Total"], skills_rows)}
     </div>
 """
 
+    attack_rows = build_weapon_attack_rows()
+    summary_combat_cards = []
+    if attack_rows:
+        summary_combat_cards.append(f"""
+      <div class="card" style="margin-top: 12px;">
+        <h3>Ataques</h3>
+        {render_table(["Arma", "Ataque", "Dano"], attack_rows)}
+      </div>
+""")
+    summary_actions_card = ""
+    if sections.info_actions and actions:
+        summary_actions_card = f"""
+      <div class="card" style="margin-top: 12px;">
+        <h3>Acoes e Atividades</h3>
+        <ul>{list_items(actions, 30, format_action)}</ul>
+      </div>
+"""
+        summary_combat_cards.append(summary_actions_card)
+
+    if summary_combat_cards:
+        if len(summary_combat_cards) == 1:
+            summary_cards += summary_combat_cards[0]
+        else:
+            summary_cards += f"""
+    <div class="grid-2" style="margin-top: 12px;">
+      {''.join(summary_combat_cards)}
+    </div>
+"""
     summary_section = ""
     if sections.summary and summary_cards.strip():
         summary_section = f"""
@@ -1006,7 +1185,7 @@ def generate_html(analyzer, output_title, sections: SectionFlags):
 """
 
     actions_card = ""
-    if sections.info_actions and actions:
+    if sections.info_actions and actions and not sections.summary:
         actions_card = f"""
     <div class="card" style="margin-top: 12px;">
       <h3>Acoes e Atividades</h3>
@@ -1180,6 +1359,21 @@ def generate_html(analyzer, output_title, sections: SectionFlags):
       margin: 0;
       padding-left: 18px;
       font-size: 12px;
+    }}
+    .spell-name {{
+      font-weight: 700;
+      color: var(--pf2e-green);
+    }}
+    .spell-meta {{
+      font-size: 11px;
+      color: var(--pf2e-muted);
+      margin-top: 2px;
+    }}
+    .spell-desc {{
+      font-size: 11px;
+      color: var(--pf2e-ink);
+      margin-top: 6px;
+      line-height: 1.35;
     }}
     .note {{
       font-size: 11px;
@@ -1414,6 +1608,7 @@ def run_preview(json_file: Path, sections: SectionFlags) -> Path:
     html_path = temp_dir / f"preview_{safe_name}_{timestamp}_temp.html"
     html_out = generate_html(analyzer, f"Ficha {character_info['name']}", sections)
     floating_button = """
+<div class="preview-json" id="previewJson">JSON: __JSON_LABEL__</div>
 <a href="#" class="floating-generate" id="floatingGenerate">Gerar ficha</a>
 <script>
   document.getElementById('floatingGenerate').addEventListener('click', (e) => {
@@ -1427,11 +1622,30 @@ def run_preview(json_file: Path, sections: SectionFlags) -> Path:
 </script>
 """
     floating_button = floating_button.replace("__JSON_PATH__", str(json_file).replace("\\", "\\\\"))
+    floating_button = floating_button.replace("__JSON_LABEL__", html.escape(str(json_file)))
     floating_button = floating_button.replace("__SECTIONS__", json.dumps(sections_to_config(sections)["sections"]))
     html_out = html_out.replace("</body>", f"{floating_button}</body>")
     html_out = html_out.replace(
         "</style>",
         """
+    .preview-json {
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      max-width: 60%;
+      background: #fffdf8;
+      border: 1px solid #e2d7c3;
+      color: #1f3f33;
+      padding: 6px 10px;
+      border-radius: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      z-index: 9999;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
     .floating-generate {
       position: fixed;
       top: 16px;
@@ -1465,7 +1679,7 @@ def main():
     if args.web_ui:
         output_dir = Path("output")
         config_path = output_dir / "config.json"
-
+        config = load_config(config_path)
         class UIHandler(BaseHTTPRequestHandler):
             def _send_json(self, data, status=200):
                 body = json.dumps(data).encode("utf-8")
@@ -1572,7 +1786,7 @@ def main():
                     return self._send_json({"error": "upload failed"}, status=400)
                 self.send_error(404)
 
-        server = HTTPServer(("127.0.0.1", 0), UIHandler)
+        server = ThreadingHTTPServer(("127.0.0.1", 0), UIHandler)
         port = server.server_address[1]
         url = f"http://127.0.0.1:{port}/"
         print(f"UI web em: {url}")
