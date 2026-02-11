@@ -62,12 +62,34 @@ body {
   border-radius: 999px;
   cursor: pointer;
   font-weight: 600;
+  position: relative;
 }
 
 .btn.primary {
   background: var(--pf2e-green);
   color: #fff;
   border-color: var(--pf2e-green);
+}
+
+.btn .btn-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(31, 63, 51, 0.25);
+  border-top-color: var(--pf2e-green);
+  border-radius: 999px;
+  display: none;
+  vertical-align: middle;
+  margin-left: 6px;
+  animation: spin 0.9s linear infinite;
+}
+
+.btn.loading {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.btn.loading .btn-spinner {
+  display: inline-block;
 }
 
 .panel {
@@ -145,6 +167,17 @@ body {
   border-radius: 12px;
   padding: 12px 14px;
   background: #fff;
+  cursor: grab;
+}
+
+.section-card.dragging {
+  opacity: 0.6;
+  cursor: grabbing;
+}
+
+.section-card.drag-over {
+  border-color: var(--pf2e-green);
+  box-shadow: 0 0 0 2px rgba(31, 63, 51, 0.15);
 }
 
 .section-title {
@@ -153,6 +186,28 @@ body {
   gap: 8px;
   font-weight: 700;
   color: var(--pf2e-green);
+  justify-content: space-between;
+}
+
+.reorder {
+  display: inline-flex;
+  gap: 6px;
+}
+
+.reorder-btn {
+  border: 1px solid #d4c4a6;
+  background: #fff6e1;
+  color: var(--pf2e-green);
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.reorder-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
 }
 
 .children {
@@ -183,6 +238,10 @@ label {
 .toast.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 
 @media (max-width: 900px) {

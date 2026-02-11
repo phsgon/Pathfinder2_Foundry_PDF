@@ -43,6 +43,8 @@ const sectionsSchema = [
 
 let selectedJson = null;
 let config = { sections: {} };
+let sectionOrder = sectionsSchema.map((section) => section.key);
+let jsonListCache = [];
 
 const jsonList = document.getElementById("jsonList");
 const selectedJsonEl = document.getElementById("selectedJson");
@@ -74,16 +76,23 @@ function getDefaultConfig() {
 
 function renderSections() {
   sectionsContainer.innerHTML = "";
-  sectionsSchema.forEach((section) => {
+  sectionOrder.forEach((sectionKey) => {
+    const section = sectionsSchema.find((s) => s.key === sectionKey);
+    if (!section) return;
     const card = document.createElement("div");
     card.className = "section-card";
+    card.setAttribute("draggable", "true");
+    card.dataset.sectionKey = sectionKey;
 
     const title = document.createElement("div");
     title.className = "section-title";
 
     const parentCheckbox = document.createElement("input");
     parentCheckbox.type = "checkbox";
-    parentCheckbox.checked = config.sections[section.key];
+    const anyChildrenChecked = section.children.some((child) => config.sections[child.key]);
+    const allChildrenChecked = section.children.every((child) => config.sections[child.key]);
+    parentCheckbox.checked = anyChildrenChecked;
+    parentCheckbox.indeterminate = anyChildrenChecked && !allChildrenChecked;
     parentCheckbox.addEventListener("change", () => {
       const checked = parentCheckbox.checked;
       config.sections[section.key] = checked;
@@ -91,6 +100,7 @@ function renderSections() {
         config.sections[child.key] = checked;
       });
       renderSections();
+      saveConfig();
     });
 
     const label = document.createElement("label");
@@ -98,6 +108,24 @@ function renderSections() {
     label.append(` ${section.label}`);
 
     title.appendChild(label);
+
+    const reorder = document.createElement("div");
+    reorder.className = "reorder";
+    const upBtn = document.createElement("button");
+    upBtn.className = "reorder-btn";
+    upBtn.textContent = "↑";
+    upBtn.title = "Mover para cima";
+    upBtn.disabled = sectionOrder[0] === sectionKey;
+    upBtn.addEventListener("click", () => moveSection(sectionKey, -1));
+    const downBtn = document.createElement("button");
+    downBtn.className = "reorder-btn";
+    downBtn.textContent = "↓";
+    downBtn.title = "Mover para baixo";
+    downBtn.disabled = sectionOrder[sectionOrder.length - 1] === sectionKey;
+    downBtn.addEventListener("click", () => moveSection(sectionKey, 1));
+    reorder.appendChild(upBtn);
+    reorder.appendChild(downBtn);
+    title.appendChild(reorder);
     card.appendChild(title);
 
     const children = document.createElement("div");
@@ -110,9 +138,10 @@ function renderSections() {
       childCheckbox.checked = config.sections[child.key];
       childCheckbox.addEventListener("change", () => {
         config.sections[child.key] = childCheckbox.checked;
-        const allChildrenChecked = section.children.every((c) => config.sections[c.key]);
-        config.sections[section.key] = allChildrenChecked;
+        const anyChecked = section.children.some((c) => config.sections[c.key]);
+        config.sections[section.key] = anyChecked;
         renderSections();
+        saveConfig();
       });
       childLabel.appendChild(childCheckbox);
       childLabel.append(` ${child.label}`);
@@ -122,6 +151,8 @@ function renderSections() {
     card.appendChild(children);
     sectionsContainer.appendChild(card);
   });
+
+  enableDragAndDrop();
 }
 
 function setAllSections(value) {
@@ -132,6 +163,7 @@ function setAllSections(value) {
     });
   });
   renderSections();
+  saveConfig();
 }
 
 enableAllBtn.addEventListener("click", () => setAllSections(true));
@@ -143,6 +175,15 @@ async function loadConfig() {
       const data = await res.json();
       config = data;
       config.sections = { ...getDefaultConfig(), ...(config.sections || {}) };
+      if (Array.isArray(data.section_order) && data.section_order.length) {
+        sectionOrder = data.section_order.filter((key) =>
+          sectionsSchema.some((section) => section.key === key)
+        );
+        const missing = sectionsSchema
+          .map((section) => section.key)
+          .filter((key) => !sectionOrder.includes(key));
+        sectionOrder = [...sectionOrder, ...missing];
+      }
       if (data.last_json) {
         selectedJson = data.last_json;
         selectedJsonEl.textContent = selectedJson;
@@ -155,7 +196,80 @@ async function loadConfig() {
   config.sections = getDefaultConfig();
 }
 
+async function saveConfig() {
+  const payload = {
+    ...config,
+    section_order: sectionOrder,
+  };
+  try {
+    await fetch("/api/config", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+  } catch (err) {
+    // ignore
+  }
+}
+
+function moveSection(sectionKey, direction) {
+  const index = sectionOrder.indexOf(sectionKey);
+  if (index === -1) return;
+  const newIndex = index + direction;
+  if (newIndex < 0 || newIndex >= sectionOrder.length) return;
+  sectionOrder.splice(index, 1);
+  sectionOrder.splice(newIndex, 0, sectionKey);
+  renderSections();
+  saveConfig();
+}
+
+function enableDragAndDrop() {
+  const cards = Array.from(document.querySelectorAll(".section-card"));
+  let draggingKey = null;
+
+  cards.forEach((card) => {
+    card.addEventListener("dragstart", (e) => {
+      draggingKey = card.dataset.sectionKey;
+      card.classList.add("dragging");
+      e.dataTransfer.effectAllowed = "move";
+      e.dataTransfer.setData("text/plain", draggingKey);
+    });
+
+    card.addEventListener("dragend", () => {
+      draggingKey = null;
+      card.classList.remove("dragging");
+      cards.forEach((c) => c.classList.remove("drag-over"));
+    });
+
+    card.addEventListener("dragover", (e) => {
+      e.preventDefault();
+      e.dataTransfer.dropEffect = "move";
+      card.classList.add("drag-over");
+    });
+
+    card.addEventListener("dragleave", () => {
+      card.classList.remove("drag-over");
+    });
+
+    card.addEventListener("drop", (e) => {
+      e.preventDefault();
+      card.classList.remove("drag-over");
+      const targetKey = card.dataset.sectionKey;
+      const sourceKey = draggingKey || e.dataTransfer.getData("text/plain");
+      if (!sourceKey || sourceKey === targetKey) return;
+      const from = sectionOrder.indexOf(sourceKey);
+      const to = sectionOrder.indexOf(targetKey);
+      if (from === -1 || to === -1) return;
+      sectionOrder.splice(from, 1);
+      sectionOrder.splice(to, 0, sourceKey);
+      renderSections();
+      saveConfig();
+    });
+  });
+}
+
 function renderJsonList(list) {
+  jsonListCache = list || [];
   jsonList.innerHTML = "";
   list.forEach((path) => {
     const item = document.createElement("div");
