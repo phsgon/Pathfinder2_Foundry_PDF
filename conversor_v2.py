@@ -692,56 +692,150 @@ def generate_html(analyzer, output_title, sections: SectionFlags):
             parts.append(f"tracos: {traits_text}")
         return " — ".join(parts) if len(parts) > 1 else item_name
 
-    def build_weapon_attack_rows():
-        if not weapons:
-            return []
+    def estimate_attack_bonus(item):
         level = info["level"]
         proficiency_ranks = {0: 0, 1: level, 2: level + 4, 3: level + 8, 4: level + 12}
         weapon_profs = attacks.get("weapon_proficiencies", {})
-        rows = []
+
+        system_item = item.get("system", {})
+        traits = system_item.get("traits", {}).get("value", []) or []
+        traits = [clean_text(t).lower() for t in traits if clean_text(t)]
+        is_thrown = "thrown" in traits
+        is_finesse = "finesse" in traits
+
+        range_value = system_item.get("range", None)
+        if isinstance(range_value, dict):
+            range_value = range_value.get("value", "")
+        is_ranged = bool(range_value)
+
+        if is_ranged and not is_thrown:
+            ability_mod = ability_mods.get("dex", 0)
+        elif is_finesse:
+            ability_mod = max(ability_mods.get("str", 0), ability_mods.get("dex", 0))
+        else:
+            ability_mod = ability_mods.get("str", 0)
+
+        category = system_item.get("category", "")
+        rank = weapon_profs.get(category, attacks["melee"]["proficiency"])
+        prof_bonus = proficiency_ranks.get(rank, 0)
+
+        bonus = system_item.get("bonus", {}).get("value", 0) or 0
+        potency = system_item.get("runes", {}).get("potency", 0) or 0
+        return prof_bonus + ability_mod + bonus + potency
+
+    def format_weapon_damage(system_item):
+        damage = system_item.get("damage", {})
+        dice = damage.get("dice", 0)
+        die = damage.get("die", "")
+        damage_type = clean_text(damage.get("damageType", ""))
+        striking = system_item.get("runes", {}).get("striking", 0) or 0
+        if not (dice and die):
+            return "-"
+        die_text = str(die) if str(die).startswith("d") else f"d{die}"
+        total_dice = dice * (1 + striking)
+        parts = [f"{total_dice}{die_text}"]
+        if damage_type:
+            parts.append(damage_type)
+        splash = system_item.get("splashDamage", {}).get("value", 0) or 0
+        if splash:
+            parts.append(f"+{splash} respingo")
+        return " ".join(parts)
+
+    def build_attack_buttons(attack_bonus, agile=False):
+        map_first = 4 if agile else 5
+        map_second = 8 if agile else 10
+        return [
+            ("attack", f"GOLPEAR {attack_bonus:+}"),
+            ("attack", f"{attack_bonus - map_first:+} (PAM -{map_first})"),
+            ("attack", f"{attack_bonus - map_second:+} (PAM -{map_second})"),
+        ]
+
+    def build_draw_actions(system_item):
+        equipped = system_item.get("equipped", {})
+        hands_held = equipped.get("handsHeld", 0) if isinstance(equipped, dict) else 0
+        if hands_held:
+            return []
+
+        usage = clean_text(system_item.get("usage", {}).get("value", "")).lower()
+        traits = system_item.get("traits", {}).get("value", []) or []
+        traits = [clean_text(t).lower() for t in traits if clean_text(t)]
+
+        actions_list = []
+        if "held-in-one-hand" in usage:
+            actions_list.append("SACAR (1M)")
+        if "held-in-two-hands" in usage or any(t.startswith("two-hand") for t in traits):
+            actions_list.append("SACAR (2M)")
+        return actions_list
+
+    def build_attack_profiles():
+        profiles = []
+
+        # Strike desarmado e sintetico no PF2e; montamos com os dados calculados da ficha.
+        unarmed_bonus = attacks.get("melee", {}).get("total")
+        if isinstance(unarmed_bonus, int):
+            profiles.append({
+                "name": "Ataque Desarmado",
+                "buttons": build_attack_buttons(unarmed_bonus, agile=True),
+                "details": ["Base da ficha", "Dano base 1d4 contundente"],
+                "utility": [],
+            })
+
         for item in weapons:
             item_name = clean_text(item.get("name", ""))
+            if not item_name:
+                continue
+
             system_item = item.get("system", {})
             traits = system_item.get("traits", {}).get("value", []) or []
             traits = [clean_text(t) for t in traits if clean_text(t)]
-            is_thrown = "thrown" in traits
-            is_finesse = "finesse" in traits
+            agile = any(t.lower() == "agile" for t in traits)
 
-            range_value = system_item.get("range", None)
+            attack_bonus = estimate_attack_bonus(item)
+            damage_text = format_weapon_damage(system_item)
+            range_value = system_item.get("range", "")
             if isinstance(range_value, dict):
                 range_value = range_value.get("value", "")
-            is_ranged = bool(range_value)
+            reload_value = clean_text(system_item.get("reload", {}).get("value", ""))
+            details = [f"Dano {damage_text}"]
+            if range_value:
+                details.append(f"Alcance {range_value}")
+            if reload_value and reload_value != "-":
+                details.append(f"Recarga {reload_value}")
+            if traits:
+                details.append("Tracos: " + ", ".join(traits))
 
-            if is_ranged and not is_thrown:
-                ability_mod = ability_mods.get("dex", 0)
-            elif is_finesse:
-                ability_mod = max(ability_mods.get("str", 0), ability_mods.get("dex", 0))
-            else:
-                ability_mod = ability_mods.get("str", 0)
+            profiles.append({
+                "name": item_name,
+                "buttons": build_attack_buttons(attack_bonus, agile=agile),
+                "details": details,
+                "utility": build_draw_actions(system_item),
+            })
+        return profiles
 
-            category = system_item.get("category", "")
-            rank = weapon_profs.get(category, attacks["melee"]["proficiency"])
-            prof_bonus = proficiency_ranks.get(rank, 0)
-
-            bonus = system_item.get("bonus", {}).get("value", 0) or 0
-            potency = system_item.get("runes", {}).get("potency", 0) or 0
-            attack_total = prof_bonus + ability_mod + bonus + potency
-
-            damage = system_item.get("damage", {})
-            dice = damage.get("dice", 0)
-            die = damage.get("die", "")
-            damage_type = clean_text(damage.get("damageType", ""))
-            striking = system_item.get("runes", {}).get("striking", 0) or 0
-            damage_text = "-"
-            if dice and die:
-                die_text = str(die) if str(die).startswith("d") else f"d{die}"
-                total_dice = dice * (1 + striking)
-                damage_text = f"{total_dice}{die_text}"
-                if damage_type:
-                    damage_text = f"{damage_text} {damage_type}"
-
-            rows.append([item_name, f"{attack_total:+}", damage_text])
-        return rows
+    def render_attack_cards():
+        profiles = build_attack_profiles()
+        if not profiles:
+            return ""
+        cards_html = []
+        for profile in profiles:
+            buttons = "".join(
+                f"<span class=\"atk-btn atk-btn-{kind}\">{h(label)}</span>"
+                for kind, label in profile.get("buttons", [])
+            )
+            utility = "".join(f"<span class=\"atk-btn atk-btn-utility\">{h(label)}</span>" for label in profile.get("utility", []))
+            details = " | ".join(h(part) for part in profile.get("details", []) if part)
+            utility_row = f"<div class=\"atk-buttons atk-buttons-utility\">{utility}</div>" if utility else ""
+            cards_html.append(f"""
+        <article class="atk-card">
+          <div class="atk-body">
+            <div class="atk-name">{h(profile['name'])}</div>
+            <div class="atk-buttons">{buttons}</div>
+            <div class="atk-details">{details}</div>
+            {utility_row}
+          </div>
+        </article>
+""")
+        return f"<div class=\"attack-stack\">{''.join(cards_html)}</div>"
 
     def format_armor(item, item_name):
         ac_bonus = item.get("system", {}).get("acBonus", 0)
@@ -964,13 +1058,13 @@ def generate_html(analyzer, output_title, sections: SectionFlags):
     </div>
 """
 
-    attack_rows = build_weapon_attack_rows()
+    attack_cards_html = render_attack_cards()
     summary_combat_cards = []
-    if attack_rows:
+    if attack_cards_html:
         summary_combat_cards.append(f"""
       <div class="card" style="margin-top: 12px;">
         <h3>Ataques</h3>
-        {render_table(["Arma", "Ataque", "Dano"], attack_rows)}
+        {attack_cards_html}
       </div>
 """)
     summary_actions_card = ""
@@ -1360,6 +1454,9 @@ def generate_html(analyzer, output_title, sections: SectionFlags):
       padding-left: 18px;
       font-size: 12px;
     }}
+    li {{
+      margin: 2px 0;
+    }}
     .spell-name {{
       font-weight: 700;
       color: var(--pf2e-green);
@@ -1378,6 +1475,75 @@ def generate_html(analyzer, output_title, sections: SectionFlags):
     .note {{
       font-size: 11px;
       color: var(--pf2e-muted);
+    }}
+    .attack-stack {{
+      display: grid;
+      gap: 10px;
+    }}
+    .atk-card {{
+      display: block;
+      padding: 8px;
+      border: 1px solid #dfd3bf;
+      border-radius: 8px;
+      background: linear-gradient(180deg, #fffdfa 0%, #fbf5ea 100%);
+    }}
+    .atk-name {{
+      font-size: 22px;
+      line-height: 1.05;
+      color: #2f2f2f;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }}
+    .atk-buttons {{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 5px;
+    }}
+    .atk-btn {{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      line-height: 1.1;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      border: 1px solid transparent;
+      white-space: nowrap;
+    }}
+    .atk-btn-attack {{
+      color: #fff;
+      background: #163a8a;
+      border-color: #0f2d71;
+    }}
+    .atk-btn-result {{
+      color: #fff;
+      background: #8e1f11;
+      border-color: #6f160b;
+    }}
+    .atk-btn-utility {{
+      color: #1f1f1f;
+      background: #f7f3eb;
+      border-color: #d8cab2;
+    }}
+    .atk-buttons-utility {{
+      margin-bottom: 0;
+      margin-top: 4px;
+    }}
+    .atk-details {{
+      font-size: 11px;
+      color: #5f5b53;
+      line-height: 1.25;
+    }}
+    @media (max-width: 800px) {{
+      .atk-name {{
+        font-size: 19px;
+      }}
+      .atk-btn {{
+        font-size: 11px;
+      }}
     }}
     .notes-box {{
       min-height: 90mm;
